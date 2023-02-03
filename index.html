@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- CSS -->
-    <link
-      rel="stylesheet" href="styles/default.css"
-    />
+    <link rel="stylesheet" href="styles/style.css"/>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +17,7 @@
   </head>
 
   <body>
-
+    <div class="trail"></div>
     <header>
       <h1>Tom Dawson</h1>
       <p>Software Developer</p>
@@ -77,8 +75,9 @@
     </div>
 
     <footer>
-      <p>Copyright &copy; 2023 Example Inc.</p>
+      <p>&copy;<?php echo date('Y'); ?> Tom Dawson (obviously)</p>
     </footer>
-
+    <!-- JS Links -->
+    <script src="scripts/script.js"></script>
   </body>
 </html>
