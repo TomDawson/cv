@@ -75,7 +75,9 @@
     </div>
 
     <footer>
-      <p>&copy;<?php echo date('Y'); ?> Tom Dawson (obviously)</p>
+      <p>&copy;</p>
+      <?php echo date('Y'); ?>
+      <p>Tom Dawson (obviously)</p>
     </footer>
     <!-- JS Links -->
     <script src="scripts/script.js"></script>
