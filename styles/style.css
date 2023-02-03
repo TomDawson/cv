@@ -46,3 +46,8 @@ footer {
   border-radius: 50%;
   pointer-events: none;
 }
+
+.obviously {
+  font-size: smaller;
+  font-style: italic;
+}
