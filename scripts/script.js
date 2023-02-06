@@ -1,21 +1,16 @@
-const trail = document.querySelector('.trail');
-let mouseX = 0;
-let mouseY = 0;
-let colorIndex = 0;
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+let mouseCursor = document.querySelector(".cursor");
+let links = document.querySelectorAll("a");
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
+document.addEventListener("mousemove", (e) => {
+  mouseCursor.style.top = e.pageY + "px";
+  mouseCursor.style.left = e.pageX + "px";
 });
 
-const animate = () => {
-  trail.style.left = `${mouseX - 5}px`;
-  trail.style.top = `${mouseY - 5}px`;
-  trail.style.backgroundColor = colors[colorIndex % colors.length];
-  colorIndex++;
-
-  requestAnimationFrame(animate);
-};
-
-animate();
+links.forEach((link) => {
+  link.addEventListener("mouseover", () => {
+    mouseCursor.classList.add("link-grow");
+  });
+  link.addEventListener("mouseleave", () => {
+    mouseCursor.classList.remove("link-grow");
+  });
+});
