@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+  <meta name="color-scheme" content="light dark">
   <!-- CSS -->
   <link rel="stylesheet" href="styles/style.css"/>
   <!-- Google Fonts -->
@@ -53,7 +54,7 @@
   <meta itemprop="homeLocation" content="Brisbane, Australia">
   <meta itemprop="knowsAbout" content="HTML, CSS, JavaScript, Sass, React, Node.js, MongoDB, Git, GitHub, SEO, Web Optimisation, WordPress, WooCommerce, Divi, cPanel/WHM, Jira Administration/Automation, Azure AD, Agile, DevOps">
 </head>
-<body class="dark-mode || light-mode">
+<body>
   <header>
     <h1>Tom Dawson</h1>
     <p>Software Developer</p>
@@ -68,6 +69,13 @@
         <li><a target="_blank" href="https://www.linkedin.com/in/tom-dawson-094217101/"><img alt="LinkedIn" src="images/linkedin.svg" class="social-icon"></a></li>
         <li><a href="mailto:tomdaw92@gmail.com"><img alt="Email" src="images/email.svg" class="social-icon"></a></li>
       </ul>
+      <div id="toggleContainer">
+        <span>Dark Mode?</span>
+        <div id="slideToggle">
+          <span id="slideToggleText" class="negativeText">Nah</span>
+          <span id="slideToggleButton"></span>
+        </div>
+      </div>
     </nav>
   </header>
   <aside>
