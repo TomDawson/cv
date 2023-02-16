@@ -1,4 +1,4 @@
-@font-face { /* jetbrains */
+@font-face { /* JetBrains */
   font-display: swap;
   font-family: 'JetBrains Mono';
   font-style: normal;
@@ -10,7 +10,6 @@
        url('../fonts/jetbrains-mono-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono') format('svg'); /* Legacy iOS */
 }
-
 @font-face { /* Pixel NES */
   font-display: swap;
   font-family: 'Pixel NES';
@@ -22,33 +21,27 @@
        url('../fonts/Pixel_NES.svg#PixelNES') format('svg');
 }
 
-/*
-:root {
-  --accent-1: #A288E3;
-}*/
-
 html[data-theme='light'] {
   --text: #0B1014;
+  --background: #E3E3DD;
   --link: #A288E3;
   --accent-1: #A288E3;
-  --background: #E3E3DD;
+  --accent-2: #A288E3;
   --highlight-background: var(--text);
   --highlight-text: var(--background);
 }
 
 html[data-theme='dark'] {
   --text: #E3E3DD;
+  --background: #0B1014;
   --link: #A288E3;
   --accent-1: #A288E3;
-  --background: #0B1014;
+  --accent-2: #A288E3;
   --highlight-background: var(--text);
   --highlight-text: var(--background);
 }
 
-::selection {
-  background: var(--highlight-background);
-  color: var(--highlight-text);
-}
+/* Page Structure */
 
 body {
   font-family: 'JetBrains Mono', sans-serif;
@@ -61,23 +54,84 @@ body {
   padding: 0;
 }
 
-/* Theme swap animation */
-body, img {
-  transition: all 0.3s;
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  gap:0px;
+}
+
+.container {
+  padding: 0px 15px 15px 15px;
+  text-align: justify;
+  width: clamp(0px, 95vw, 680px);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.sub-container {
+  padding: 0px 0px 10px 0px;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline-start: 0px;
+  width: calc(100% + 10px);
+}
+
+.flex-container > li {
+  list-style-type: none;
+  text-align: center;
+  padding: 7px 10px 5px 10px;
+  margin: 10px;
+}
+
+.primary-skill {
+  background-color: var(--accent-1);
+  color: var(--background);
+}
+
+.secondary-skill {
+  background-color: var(--accent-2);
+  color: var(--background);
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  margin: auto;
+  margin: 30px 0px 10px 0px;
+  padding:0px 15px 0px 15px;
+  border: none;
+  border-bottom: dashed 3px var(--accent-1);
+}
+
+::selection {
+  background: var(--highlight-background);
+  color: var(--highlight-text);
 }
 
 a {
-  color: var(--link);
+  color: var(--accent-1);
 }
 
 a:hover, img:hover {
   transform: rotate(12deg);
 }
 
+/* Theme swap animation */
+body, img {
+  transition: all 0.3s;
+}
+
 /* Header styles */
-header {
-  padding-top:30px;
-  border-bottom: 2px dashed var(--accent-1);
+header.container {
+  padding-top:20px;
 }
 
 header nav ul {
@@ -108,12 +162,11 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-size:1.3rem;
-  line-height:1.2;
+  margin-block: 1em;
+  line-height:1;
 }
 
-#h1-tom {
-
-}
+/* #h1-tom {}*/
 
 #h1-dawson {
   -webkit-text-stroke: 1px var(--text);
@@ -122,24 +175,16 @@ h2, h3, h4, h5, h6 {
 
 /* SVG styles */
 .social-icon {
-  width:18px;
+  width:20px;
 }
 
 .social-icon::selection {
   background: none;
 }
 
-.container {
-  padding: 10px 15px 10px 15px;
-  text-align: justify;
-  width: clamp(0px, 95vw, 680px);
-  margin: auto;
-  box-sizing: border-box;
-}
-
 /* Footer */
-footer {
-  padding-bottom:30px;
+footer.container {
+  padding-bottom:20px;
   font-family: 'Pixel NES', sans-serif;
   font-size: 0.9rem;
 }
@@ -150,3 +195,17 @@ footer {
   font-weight: 100;
   opacity: 50%;
 }
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb { /* Foreground */
+  background: var(--accent-1);
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track { /* Background */
+  background: var(--background);
+}
+
