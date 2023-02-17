@@ -21,12 +21,16 @@
        url('../fonts/Pixel_NES.svg#PixelNES') format('svg');
 }
 
+/* Light and Dark Themes */
+
 html[data-theme='light'] {
   --text: #0B1014;
   --background: #E3E3DD;
   --link: #A288E3;
   --accent-1: #A288E3;
   --accent-2: #A288E3;
+  --scanline-after: rgba(0, 128, 0, 0.205);
+  --scanline-before: rgba(0, 128, 0, 0.212);
   --highlight-background: var(--text);
   --highlight-text: var(--background);
 }
@@ -37,6 +41,8 @@ html[data-theme='dark'] {
   --link: #A288E3;
   --accent-1: #A288E3;
   --accent-2: #A288E3;
+  --scanline-after: rgba(0, 128, 0, 0.226);
+  --scanline-before: rgba(0, 128, 0, 0.24);
   --highlight-background: var(--text);
   --highlight-text: var(--background);
 }
@@ -56,16 +62,16 @@ body {
 
 .site-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  gap:0px;
+  min-height: 100vh; /* container always  */
+  flex-direction: column; /* containers flex vertically */
+  justify-content: center; /* centered vertically */
+  gap:0px; /* no spacing between containers */
 }
 
 .container {
   padding: 0px 15px 15px 15px;
   text-align: justify;
-  width: clamp(0px, 95vw, 680px);
+  width: clamp(0px, 95vw, 680px); /* always shrinks, prefers 95vw, max 680px */
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -203,9 +209,50 @@ footer.container {
 }
 ::-webkit-scrollbar-thumb { /* Foreground */
   background: var(--accent-1);
-  border-radius: 50px;
+  border-radius: 0px;
 }
 ::-webkit-scrollbar-track { /* Background */
   background: var(--background);
 }
 
+/* Scanlines */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.scanlines:before, .scanlines:after {
+  display: block;
+  pointer-events: none;
+  content: '';
+  position: absolute;
+}
+.scanlines:before {
+  width: 100%;
+  height: 1px;
+  z-index: 2147483649;
+  background: var(--scanline-before);
+  opacity: 0.75;
+  animation: scanline 10s linear infinite;
+}
+.scanlines:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483648;
+  background: linear-gradient(to bottom, transparent 50%, var(--scanline-after) 51%);
+  background-size: 100% 4px;
+  animation: scanlines 1s steps(180) infinite;
+}
+
+/* Animate distinct scanline */
+@keyframes scanline {
+  0% {
+    transform: translate3d(0, 200000%, 0);
+ }
+}
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+ }
+}

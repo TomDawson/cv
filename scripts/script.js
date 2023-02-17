@@ -1,6 +1,7 @@
 console.log('- .... . .-. . -....- .. ... -....- -. --- -....- .--- --- -.- . -....- .... . .-. .');
 
 /* * * Theme Swapping * * */
+
 var themeToggle = document.getElementById("theme-toggle");
 var darkModeSpan = document.getElementById("dark-mode-span");
 var lightModeSpan = document.getElementById("light-mode-span");
@@ -55,3 +56,24 @@ function refreshThemeToggle() {
 };
 
 refreshThemeToggle();
+
+/*** Scanlines ***/
+
+var $scanlines = $('.scanlines');
+$scanlines
+    .children().hide()
+    .first().show();
+
+// toggle scanlines
+$('#togglescanlines').on('click', function(e) {
+  e.preventDefault();
+  $scanlines.toggleClass('scanlines');
+});
+
+// switch between demos
+$('.sample-ctrl a').on('click', function(e) {
+   e.preventDefault();
+   $scanlines
+       .children().hide()
+       .filter('#'+ $(this).attr('data-ctrl')).show();
+});
