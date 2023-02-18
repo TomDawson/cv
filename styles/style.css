@@ -42,7 +42,7 @@ html[data-theme='dark'] {
   --accent-1: #A288E3;
   --accent-2: #A288E3;
   --scanline-after: rgba(0, 102, 0, 0.226);
-  --scanline-before: rgba(0, 94, 0, 0.24);
+  --scanline-before: rgba(0, 102, 0, 0.226);
   --highlight-background: var(--text);
   --highlight-text: var(--background);
 }
@@ -58,24 +58,13 @@ body {
   background-color: var(--background);
   margin: 0;
   padding: 0;
-  /* CRT Lines 
   background: repeating-linear-gradient(
     0deg,
     var(--scanline-after),
     var(--scanline-before) 1px,
     transparent 1px,
     transparent 2px
-  );*/
-}
-
-#crt-wrapper {
-    background-image: url('../images/crt.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    pointer-events: none;
-    position: relative;
-    z-index: 100;
+  );
 }
 
 #site-wrapper {
@@ -86,7 +75,19 @@ body {
   gap:0px; /* no spacing between containers */
   pointer-events: auto;
   position: relative;
-  z-index:-1;
+  z-index: 1;
+}
+
+#crt {
+  background-image: url('../images/crt.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 3;
 }
 
 .container {
@@ -96,10 +97,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
 .sub-container {
   padding: 0px 0px 10px 0px;
+  position: relative;
+  z-index: 2;
 }
 
 .flex-container {
@@ -109,6 +114,8 @@ body {
   flex-wrap: wrap;
   padding-inline-start: 0px;
   width: calc(100% + 10px);
+  position: relative;
+  z-index: 2;
 }
 
 .flex-container > li {
@@ -116,6 +123,8 @@ body {
   text-align: center;
   padding: 7px 10px 5px 10px;
   margin: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .primary-skill {
@@ -247,9 +256,4 @@ footer.container {
 }
 ::-webkit-scrollbar-track { /* Background */
   background: var(--background);
-}
-
-
-section:hover {
-  background-color: rgba(0, 162, 255, 0.199);
 }
