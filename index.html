@@ -52,9 +52,9 @@
   <meta itemprop="knowsAbout" content="HTML, CSS, JavaScript, Sass, React, Node.js, MongoDB, Git, GitHub, SEO, Web Optimisation, WordPress, WooCommerce, Divi, cPanel/WHM, Jira Administration/Automation, Azure AD, Agile, DevOps">
 </head>
 <body>
-  <div class="site-wrapper scanlines">
+  <div id="site-wrapper"> <!-- class="scanlines" -->
     <header class="container">
-      <h1><span id="h1-tom">Tom</span> <span id="h1-dawson">Dawson</span></h1>
+      <h1 class="chromatic-abberation"><span id="h1-tom">Tom</span> <span id="h1-dawson">Dawson</span></h1>
       <p>Software Developer</p>
       <nav>
         <ul>
@@ -75,9 +75,9 @@
               </button>
             </div>
           </li>
-          <li>
+          <!-- <li>
             <a id="togglescanlines" href="#">Toggle scanlines</a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <hr>
@@ -121,15 +121,17 @@
           <li class="primary-skill">React</li>
           <li class="primary-skill">Node.js</li>
           <li class="primary-skill">MongoDB</li>
+
+          <li class="primary-skill">Responsive Design</li>
+          <li class="primary-skill">SEO</li>
           <li class="primary-skill">Git</li>
           <li class="primary-skill">GitHub</li>
-          <li class="secondary-skill">Jira Administration/Automation</li>
+          <li class="secondary-skill">Jira Administration+Automation</li>
           <li class="secondary-skill">Azure AD</li>
           <li class="secondary-skill">Agile</li>
           <li class="secondary-skill">DevOps</li>
-          <li class="secondary-skill">Responsive Web Design</li>
-          <li class="secondary-skill">SEO</li>
-          <li class="secondary-skill">Web Optimisation</li>
+
+          <li class="secondary-skill">Website Optimisation</li>
           <li class="secondary-skill">WordPress</li>
           <li class="secondary-skill">Divi</li>
           <li class="secondary-skill">WooCommerce</li>
@@ -137,10 +139,32 @@
         </ul>
       </section>
     </main>
-    <footer class="container"><!-- Inserts current year -->
+    <footer class="container"><!-- php inserts current year -->
       <p>&copy;<?php echo date('Y'); ?> Tom Dawson <span class="obviously">obviously</span></p>
     </footer>
+    <!-- Chromatic Abberation | Values = "RRRRR/GGGGG/BBBBB/AAAAA" -->
+    <svg width="0" height="0">
+      <filter id="chromatic-abberation">
+        <feColorMatrix type="matrix" 
+          result="red_"             
+          values="3 0 0 0 0 
+                  0 1 0 0 0 
+                  0 0 1 0 0 
+                  0 0 0 1 0"/>
+        <feOffset in="red_" dx="2" dy="-2" result="red"/>
+        <feColorMatrix type="matrix" 
+          in="SourceGraphic"             
+          result="blue_"             
+          values="1 0 0 0 0
+                  0 1 0 0 0 
+                  0 0 5 0 0 
+                  0 0 0 1 0"/>
+        <feOffset in="blue_" dx="-2" dy="2" result="blue"/>    
+        <feBlend mode="screen" in="red" in2="blue"/>
+      </filter>
+    </svg>
   </div>
+  <!-- Asynchronous JS -->
   <script src="scripts/script.js"></script>
 </body>
 </html>
