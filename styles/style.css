@@ -68,16 +68,25 @@ body {
   );*/
 }
 
+#crt-wrapper {
+    background-image: url('../images/crt.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    pointer-events: none;
+    position: relative;
+    z-index: 100;
+}
+
 #site-wrapper {
   display: flex;
   min-height: 100vh; /* container always  */
   flex-direction: column; /* containers flex vertically */
   justify-content: center; /* centered vertically */
   gap:0px; /* no spacing between containers */
-  /* CRT Border */
-  background-image: url('../images/crt.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  pointer-events: auto;
+  position: relative;
+  z-index:-1;
 }
 
 .container {
