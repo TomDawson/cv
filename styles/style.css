@@ -21,50 +21,60 @@
        url('../fonts/Pixel_NES.svg#PixelNES') format('svg');
 }
 
+.preload * { /* scripts.js removes this class on page load */
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 /* Light and Dark Themes */
 
 html[data-theme='light'] {
-  --text: #0B1014;
-  --background: #E3E3DD;
+  --text-1: #0B1014;
+  --text-2: #49789e;
+  --wrapper-background: #E3E3DD;/* Opaque background overlay */
   --link: #A288E3;
   --accent-1: #A288E3;
   --accent-2: #A288E3;
-  --scanline-after: rgba(0, 128, 0, 0.205);
-  --scanline-before: rgba(0, 128, 0, 0.212);
-  --highlight-background: var(--text);
-  --highlight-text: var(--background);
+  --highlight-background: var(--text-1);
+  --highlight-text: var(--accent-1);
 }
 
 html[data-theme='dark'] {
-  --text: #E3E3DD;
-  --background: #0B1014;
+  --text-1: #E3E3DD;
+  --text-2: #a5a59f;
+  --wrapper-background: #00000000;/* Transparent background overlay */
   --link: #A288E3;
   --accent-1: #A288E3;
   --accent-2: #A288E3;
-  --scanline-after: rgba(0, 102, 0, 0.226);
-  --scanline-before: rgba(0, 102, 0, 0.226);
-  --highlight-background: var(--text);
-  --highlight-text: var(--background);
+  --highlight-background: var(--text-1);
+  --highlight-text: var(--accent-1);
 }
 
-/* Page Structure */
+/* Transitions */
+
+nav, hr, img, a, .container, #h1-tom, #h1-dawson, .primary-skill, .secondary-skill {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.primary-skill, .secondary-skill {
+  transition: background-color 0.3s;
+}
 
 body {
   font-family: 'JetBrains Mono', sans-serif;
   font-size: 16px;
+  text-align: left;
   line-height: 1.3;
-  letter-spacing: 0px;
-  color: var(--text);
-  background-color: var(--background);
+  letter-spacing: -0.05rem;
+  color: var(--text-1);
   margin: 0;
   padding: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    var(--scanline-after),
-    var(--scanline-before) 1px,
-    transparent 1px,
-    transparent 2px
-  );
 }
 
 #site-wrapper {
@@ -76,6 +86,46 @@ body {
   pointer-events: auto;
   position: relative;
   z-index: 1;
+  background-color: var(--wrapper-background);
+  transition: background 0.3s ease-in-out;
+}
+
+/* Override default <h> styles */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pixel NES', sans-serif;
+  font-weight: 100;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size:1.3rem;
+  margin-block: 1em;
+  line-height:1;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+}
+
+#h1-dawson {
+  -webkit-text-stroke: 1px var(--text-1);
+  -webkit-text-fill-color: var(--accent-1);
+}
+
+#h1-tom {
+  -webkit-text-stroke: 1px var(--text-1);
+  -webkit-text-fill-color: var(--accent-2);
+}
+
+/* SVG styles */
+/* Chromatic Abberation */
+.chromatic-abberation {
+  position: relative;
+  -webkit-filter: url(#chromatic-abberation);
 }
 
 #crt {
@@ -92,7 +142,6 @@ body {
 
 .container {
   padding: 0px 15px 15px 15px;
-  text-align: justify;
   width: clamp(0px, 95vw, 680px); /* always shrinks, prefers 95vw, max 680px */
   margin-left: auto;
   margin-right: auto;
@@ -161,11 +210,6 @@ a:hover, img:hover {
   transform: rotate(12deg);
 }
 
-/* Theme swap animation */
-body, img {
-  transition: all 0.3s;
-}
-
 /* Header styles */
 header.container {
   padding-top:20px;
@@ -186,41 +230,6 @@ header nav a {
   text-decoration: none;
   font-size:0.9rem;
 }
-
-/* Override default <h> styles */
-h2, h3, h4, h5, h6 {
-  font-size:1.3rem;
-  margin-block: 1em;
-  line-height:1;
-}
-
-h1 {
-  font-family: 'Pixel NES', sans-serif;
-  font-size: 3rem;
-  line-height: 1;
-  font-weight: 100;
-  text-transform: uppercase;
-  overflow: hidden;
-  letter-spacing: 2px;
-}
-
-#h1-dawson {
-  -webkit-text-stroke: 1px var(--text);
-  -webkit-text-fill-color: var(--accent-1);
-}
-
-#h1-tom {
-  -webkit-text-stroke: 1px var(--text);
-  -webkit-text-fill-color: var(--accent-2);
-}
-
-/* SVG styles */
-/* Chromatic Abberation */
-.chromatic-abberation {
-  position: relative;
-  -webkit-filter: url(#chromatic-abberation);
-}
-
 
 /* Social Links */
 .social-icon {
@@ -255,5 +264,13 @@ footer.container {
   border-radius: 0px;
 }
 ::-webkit-scrollbar-track { /* Background */
-  background: var(--background);
+  background: #000;
+}
+
+span.date {
+  display: block;
+  padding-bottom: 10px;
+  font-size: 0.85em;
+  font-style:normal
+  color: var(--text-2);
 }

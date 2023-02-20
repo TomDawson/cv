@@ -1,7 +1,6 @@
 console.log('- .... . .-. . -....- .. ... -....- -. --- -....- .--- --- -.- . -....- .... . .-. .');
 
-//// Theme Swapping
-
+//// Theme Swapping: Start
 var themeToggle = document.getElementById("theme-toggle");
 var darkModeSpan = document.getElementById("dark-mode-span");
 var lightModeSpan = document.getElementById("light-mode-span");
@@ -56,24 +55,10 @@ function refreshThemeToggle() {
 };
 
 refreshThemeToggle();
+//// Theme Swapping: End
 
-//// Scanlines 
+// Removes .preload from <body> after page load to enable transitions.
+window.onload = function() {
+    document.body.classList.remove("preload");
+  };
 
-var $scanlines = $('.scanlines');
-$scanlines
-    .children().hide()
-    .first().show();
-
-// toggle scanlines
-$('#togglescanlines').on('click', function(e) {
-  e.preventDefault();
-  $scanlines.toggleClass('scanlines');
-});
-
-// switch between demos
-$('.sample-ctrl a').on('click', function(e) {
-   e.preventDefault();
-   $scanlines
-       .children().hide()
-       .filter('#'+ $(this).attr('data-ctrl')).show();
-});
