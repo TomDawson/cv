@@ -26,6 +26,7 @@
   -moz-transition: none !important;
   -ms-transition: none !important;
   -o-transition: none !important;
+  transition: none !important;
 }
 
 /* Light and Dark Themes */
@@ -126,6 +127,7 @@ h1 {
 .chromatic-abberation {
   position: relative;
   -webkit-filter: url(#chromatic-abberation);
+  filter: url(#chromatic-abberation);
 }
 
 #crt {
@@ -271,6 +273,6 @@ span.date {
   display: block;
   padding-bottom: 10px;
   font-size: 0.85em;
-  font-style:normal
+  font-style:normal;
   color: var(--text-2);
 }
