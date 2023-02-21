@@ -1,18 +1,16 @@
-::Prompt user for commit comment
-set /p "comment=Your commit comment: "
+set /p "comment=Enter comment > " & ::Prompt user for commit comment
+@echo off & ::Remove CMD output until @echo on
 
-::Delete previous combined files
+::Delete previous combined files in root directory
 del .\combined.js
 del .\combined.css
 
-::Concatenate JS files into combined.js
 ::Specify files in correct order for intentional sequencing
-type .\scripts\*.js >> .\combined.js
+type .\scripts\*.js >> .\combined.js & ::Concatenate JS files into combined.js
 
-::Concatenate CSS files into combined.css
-type .\styles\*css >> .\combined.css
+type .\styles\*css >> .\combined.css & ::Concatenate CSS files into combined.css
 
-::Add, commit with previous comment, then push to repo
+@echo on & ::Add, commit with previous comment, then push to repo with cmd feedback
 git add .
 git commit -m "%comment%"
 git push
