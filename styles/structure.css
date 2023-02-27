@@ -21,7 +21,7 @@ body {
   transition: background 0.3s ease-in-out;
 }
 
-/* Override default <h> styles */
+/* Typography */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Pixel NES', sans-serif;
@@ -43,8 +43,43 @@ h1 {
   letter-spacing: 2px;
 }
 
+#h1-tom {
+  margin-right: -10px;
+}
+
+em {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--accent-1);
+}
+
+.list-title {
+  display: block;
+  padding-bottom: 4px;
+  /* Underline Stuff
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent-1);
+  */
+}
+
+.date {
+  display: block;
+  padding-bottom: 10px;
+  font-size: 0.85em;
+  font-style:normal;
+}
+
+/* Page Structure */
+
+p:not(:last-child) {
+  padding-bottom:14px;
+}
+
 #crt {
-  background-image: url('../images/crt.png');
+  /*background-image: url('../images/crt.png');*/
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -65,6 +100,11 @@ h1 {
   position: relative;
   z-index: 2;
 }
+
+.container > * + * {
+  margin-block-start: 1.5rem;
+}
+
 
 .sub-container {
   padding: 0px 0px 10px 0px;
@@ -97,7 +137,7 @@ hr {
   width: 100%;*/
   height: 2px;
   margin: auto;
-  margin: 30px 0px 10px 0px;
+  margin: 45px 0px 10px 0px;
   padding:0px 15px 0px 15px;
   border: none;
   border-bottom: dashed 3px var(--accent-1);
@@ -164,11 +204,4 @@ footer.container {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0px;
-}
-
-span.date {
-  display: block;
-  padding-bottom: 10px;
-  font-size: 0.85em;
-  font-style:normal;
 }

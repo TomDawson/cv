@@ -30,14 +30,14 @@ body {
     background-color: var(--wrapper-background);
 }
 
-#h1-dawson {
-    -webkit-text-stroke: 1px var(--text-1);
--webkit-text-fill-color: var(--accent-1);
-}
-
 #h1-tom {
     -webkit-text-stroke: 1px var(--text-1);
     -webkit-text-fill-color: var(--accent-2);
+}
+
+#h1-dawson {
+    -webkit-text-stroke: 1px var(--text-1);
+    -webkit-text-fill-color: var(--accent-1);
 }
 
 .primary-skill {
