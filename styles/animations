@@ -1,0 +1,25 @@
+/* scripts.js removes this class on page load */
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
+
+html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+/* Transitions */
+nav, hr, img, a, .container, #h1-tom, #h1-dawson, .primary-skill, .secondary-skill {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.primary-skill, .secondary-skill {
+    transition: background-color 0.3s;
+  }

@@ -1,0 +1,43 @@
+/* Normalise button styling */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    overflow: visible;
+    font-family: 'Pixel NES', sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    text-transform: none;
+    appearance: button;
+    -webkit-appearance: button;
+    border-width:0px;
+}
+
+/* Pixel Button */
+.pixel-button {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px 14px;
+    min-width: 200px;
+    max-width: 200px;
+    background-color: var(--text-1);
+    box-shadow:   -5px 0 0 0 var(--text-1),
+                   5px 0 0 0 var(--text-1),
+                   0 -5px 0 0 var(--text-1),
+                   0 5px 0 0 var(--text-1);
+}
+
+.pixel-button:active {
+    top: 2px;
+}
+
+.pixel-button:hover,
+.pixel-button:focus {
+    background-color: var(--text-1);
+    box-shadow:   -5px 0 0 0 var(--text-1),
+                   5px 0 0 0 var(--text-1),
+                   0 -5px 0 0 var(--text-1),
+                   0 5px 0 0 var(--text-1);
+}

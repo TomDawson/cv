@@ -1,2 +1,1 @@
-##[tomdawson.dev](https://tomdawson.dev)
-This repo and the live url above represent the cv of this developer; Tom Dawson.
+This is my CV page - you can view the live site here: [tomdawson.dev](https://tomdawson.dev) 

@@ -1,0 +1,79 @@
+/* Light and Dark Themes */
+
+html[data-theme='light'] {
+    --text-1: #0B1014;
+    --text-2: #49789e;
+    --wrapper-background: #D1D5D4;/* Opaque background overlay */
+    --link: #A288E3;
+    --accent-1: #A288E3;
+    --accent-2: #A288E3;
+    --highlight-background: var(--text-1);
+    --highlight-text: var(--accent-1);
+  }
+  
+html[data-theme='dark'] {
+    --text-1: #E3E3DD;
+    --text-2: #a5a59f;
+    --wrapper-background: #30312C;/* Transparent background overlay */
+    --link: #A288E3;
+    --accent-1: #A288E3;
+    --accent-2: #A288E3;
+    --highlight-background: var(--text-1);
+    --highlight-text: var(--accent-1);
+}
+
+body {
+    color: var(--text-1);
+}
+
+#site-wrapper {
+    background-color: var(--wrapper-background);
+}
+
+#h1-dawson {
+    -webkit-text-stroke: 1px var(--text-1);
+-webkit-text-fill-color: var(--accent-1);
+}
+
+#h1-tom {
+    -webkit-text-stroke: 1px var(--text-1);
+    -webkit-text-fill-color: var(--accent-2);
+}
+
+.primary-skill {
+    background-color: var(--accent-1);
+    color: var(--background);
+}
+  
+.secondary-skill {
+    background-color: var(--accent-2);
+    color: var(--background);
+}
+
+span.date {
+    color: var(--text-2);
+}
+
+::selection {
+    background: var(--highlight-background);
+    color: var(--highlight-text);
+}
+
+/* SVG styles */
+/* Chromatic Abberation */
+.chromatic-abberation {
+    position: relative;
+    -webkit-filter: url(#chromatic-abberation);
+    filter: url(#chromatic-abberation);
+  }
+
+.obviously {
+    color: var(--accent-1);
+}
+
+::-webkit-scrollbar-thumb { /* Foreground */
+    background: var(--accent-1);
+  }
+  ::-webkit-scrollbar-track { /* Background */
+    background: #000;
+  }
