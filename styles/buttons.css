@@ -20,13 +20,16 @@ button,
     cursor: pointer;
     display: inline-block;
     padding: 7px 14px;
+    margin-left: 5px; /* Offset box-shadow for alignment */
     min-width: 200px;
     max-width: 200px;
+    color: var(--wrapper-background);
     background-color: var(--text-1);
     box-shadow:   -5px 0 0 0 var(--text-1),
                    5px 0 0 0 var(--text-1),
                    0 -5px 0 0 var(--text-1),
                    0 5px 0 0 var(--text-1);
+    transition: all 0.3s; /* Theme Toggle */
 }
 
 .pixel-button:active {

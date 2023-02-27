@@ -14,7 +14,7 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
     --text-1: #E3E3DD;
     --text-2: #a5a59f;
-    --wrapper-background: #30312C;/* Transparent background overlay */
+    --wrapper-background: #30312c;/* Transparent background overlay */
     --link: #A288E3;
     --accent-1: #A288E3;
     --accent-2: #A288E3;
