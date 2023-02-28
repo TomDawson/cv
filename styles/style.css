@@ -74,14 +74,8 @@ h1 {
   overflow: visible;
 }
 
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size:2em; 
-  }
-}
-
 h2, h3, h4, h5, h6 {
-  font-size:1.1em;
+  font-size:1.2em;
   margin-block: 1em;
 }
 
@@ -205,13 +199,13 @@ a {
 }
 
 a:hover, img:hover {
-  transform: rotate(12deg);
+  transform: scale(120%);
 }
 
 /* Header styles */
 header.container {
   padding-top:20px;
-  margin-top:40px;
+  margin-top:30px;
 }
 
 header nav ul {
@@ -337,4 +331,31 @@ button,
   clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
   clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
   white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+/* Size of title container */
+#tom-dawson {
+  width:100%;
+  height:40px;
+}
+
+/* Positioning text inside container */
+#tom-dawson text {
+  transform: translateY(38px);
+}
+
+/* Mobile breakpoint */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size:2.2em; 
+  }
+  
+  header.container {
+    padding-top:10px;
+    margin-top:20px;
+  }
+
+  #tom-dawson text {
+    transform: translateY(18px);
+  }
 }
