@@ -22,7 +22,7 @@ button,
     margin-left: 5px; /* Offset box-shadow for alignment */
     min-width: 195px;
     max-width: 195px;
-    color: var(--wrapper-background);
+    color: var(--background);
     background-color: var(--text-1);
     box-shadow:   -5px 0 0 0 var(--text-1),
                    5px 0 0 0 var(--text-1),

@@ -9,8 +9,9 @@
          url('../fonts/jetbrains-mono-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
          url('../fonts/jetbrains-mono-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono') format('svg'); /* Legacy iOS */
-  }
-  @font-face { /* Pixel NES */
+}
+
+@font-face { /* Pixel NES */
     font-display: swap;
     font-family: 'Pixel NES';
     font-weight: normal;
@@ -19,4 +20,32 @@
          url('../fonts/Pixel_NES.woff') format('woff'),
          url('../fonts/Pixel_NES.ttf') format('truetype'),
          url('../fonts/Pixel_NES.svg#PixelNES') format('svg');
-  }
+}
+
+/* atkinson-hyperlegible-regular - latin */
+@font-face {
+     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+     font-family: 'Atkinson Hyperlegible';
+     font-style: normal;
+     font-weight: 400;
+     src: url('../fonts/atkinson-hyperlegible-v10-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+          url('../fonts/atkinson-hyperlegible-v10-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   /* atkinson-hyperlegible-italic - latin */
+   @font-face {
+     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+     font-family: 'Atkinson Hyperlegible';
+     font-style: italic;
+     font-weight: 400;
+     src: url('../fonts/atkinson-hyperlegible-v10-latin-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+          url('../fonts/atkinson-hyperlegible-v10-latin-italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   /* atkinson-hyperlegible-700 - latin */
+   @font-face {
+     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+     font-family: 'Atkinson Hyperlegible';
+     font-style: normal;
+     font-weight: 700;
+     src: url('../fonts/atkinson-hyperlegible-v10-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+          url('../fonts/atkinson-hyperlegible-v10-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
