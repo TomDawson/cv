@@ -41,7 +41,7 @@ body {
 }
 
 #tom-dawson { /* SVG element */
-  animation: stroke 6s;
+  animation: stroke 4s;
   fill: var(--stroke);
   stroke: var(--stroke);
   stroke-width: 0.5px;

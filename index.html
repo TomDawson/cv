@@ -1,181 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/Person">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-  <meta name="color-scheme" content="light dark">
-  <!-- CSS -->
-  <link rel="stylesheet" href="./styles/fonts.css"/>
-  <link rel="stylesheet" href="./styles/style.css"/>
-  <link rel="stylesheet" href="./styles/animations.css"/>
-  <!-- SEO -->
-  <title>Tom Dawson | Front End Developer</title>
-  <meta name="description" content="A description of the page">
-  <meta name="theme-color" content="#00a1ff">
-  <link rel="icon" sizes="48x48" href="images/icon.png">
-  <!-- Schema -->
-  <meta itemprop="name" content="Tom Dawson">
-  <meta itemprop="givenName" content="Tom">
-  <meta itemprop="familyName" content="Dawson">
-  <meta itemprop="email" content="tomdaw92@gmail.com">
-  <meta itemprop="gender" content="Male">
-  <meta itemprop="hasOccupation" content="Front End Developer">
-  <meta itemprop="homeLocation" content="Brisbane, Australia">
-  <meta itemprop="knowsAbout" content="HTML, CSS, JavaScript, Sass, React, Node.js, MongoDB, Git, GitHub, SEO, Web Optimisation, WordPress, WooCommerce, Divi, cPanel/WHM, Jira Administration/Automation, Azure AD, Agile, DevOps">
-  <!-- Facebook -->
-  <meta property="og:url" content="https://tomdawson.dev">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Tom Dawson | Software Developer">
-  <meta property="og:image" content="https://example.com/image.jpg">
-  <meta property="og:image:alt" content="A description of what is in the image (not a caption)">
-  <meta property="og:description" content="Description Here">
-  <meta property="og:site_name" content="Site Name">
-  <meta property="og:locale" content="en_US">
-  <meta property="article:author" content="">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@site_account">
-  <meta name="twitter:creator" content="@individual_account">
-  <meta name="twitter:url" content="https://tomdawson.dev">
-  <meta name="twitter:title" content="Content Title">
-  <meta name="twitter:description" content="Content description less than 200 characters">
-  <meta name="twitter:image" content="https://example.com/image.jpg">
-  <meta name="twitter:image:alt" content="A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.">
-  <!-- Schema -->
-  <meta itemprop="name" content="Tom Dawson">
-  <meta itemprop="givenName" content="Tom">
-  <meta itemprop="familyName" content="Dawson">
-  <meta itemprop="email" content="tomdaw92@gmail.com">
-  <meta itemprop="gender" content="Male">
-  <meta itemprop="hasOccupation" content="Software Developer">
-  <meta itemprop="homeLocation" content="Brisbane, Australia">
-  <meta itemprop="knowsAbout" content="HTML, CSS, JavaScript, Sass, React, Node.js, MongoDB, Git, GitHub, SEO, Web Optimisation, WordPress, WooCommerce, Divi, cPanel/WHM, Jira Administration/Automation, Azure AD, Agile, DevOps">
-</head>
-<body class="preload">
-  <div id="site-wrapper">
-    <header class="container">
-      <div class="title-card">
-        <h1>
-          <span class="visually-hidden">Tom Dawson</span>
-          <svg id="tom-dawson" aria-hidden="true" focusable="false">
-            <text>Tom Dawson</text>
-          </svg>
-          <!--
-          <svg width="100%" height="40px" id="tom-dawson" aria-hidden="true" focusable="false">
-            <text x="0" y="38">Tom Dawson</text>
-          </svg>
-          -->
-        </h1>
-        <p>Front End Developer</p>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://github.com/TomDawson" target="_blank"><img alt="GitHub" src="images/github.svg" class="social-icon"></img></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/tom-dawson-094217101/" target="_blank"><img alt="LinkedIn" src="images/linkedin.svg" class="social-icon"></a>
-          </li>
-          <li>
-            <a class="email-address" href="mailto:tomdaw92@gmail.com">tomdaw92@gmail.com</a>
-          </li>
-        </ul>
-        <div id="toggle-container">
-          <button id="theme-toggle" class="pixel-button" type="button">
-            <span id="light-mode-span">Light Mode</span>
-            <span id="dark-mode-span">Dark Mode</span>
-          </button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <!-- SEO -->
+    <title>Tom Dawson | Front End Developer</title>
+    <meta name="description" content="A description of the page" />
+    <meta name="theme-color" content="#00a1ff" />
+    <link rel="icon" sizes="48x48" href="images/icon.png" />
+    <!-- Schema -->
+    <meta itemprop="name" content="Tom Dawson" />
+    <meta itemprop="givenName" content="Tom" />
+    <meta itemprop="familyName" content="Dawson" />
+    <meta itemprop="email" content="tomdaw92@gmail.com" />
+    <meta itemprop="gender" content="Male" />
+    <meta itemprop="hasOccupation" content="Front End Developer" />
+    <meta itemprop="homeLocation" content="Brisbane, Australia" />
+    <meta
+      itemprop="knowsAbout"
+      content="HTML, CSS, JavaScript, Sass, React, Node.js, MongoDB, Git, GitHub, SEO, Web Optimisation, WordPress, WooCommerce, Divi, cPanel/WHM, Jira Administration/Automation, Azure AD, Agile, DevOps"
+    />
+    <!-- Facebook -->
+    <meta property="og:url" content="https://tomdawson.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tom Dawson | Software Developer" />
+    <meta property="og:image" content="https://example.com/image.jpg" />
+    <meta
+      property="og:image:alt"
+      content="A description of what is in the image (not a caption)"
+    />
+    <meta property="og:description" content="Description Here" />
+    <meta property="og:site_name" content="Site Name" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:author" content="" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@site_account" />
+    <meta name="twitter:creator" content="@individual_account" />
+    <meta name="twitter:url" content="https://tomdawson.dev" />
+    <meta name="twitter:title" content="Content Title" />
+    <meta
+      name="twitter:description"
+      content="Content description less than 200 characters"
+    />
+    <meta name="twitter:image" content="https://example.com/image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters."
+    />
+    <!-- Schema -->
+    <meta itemprop="name" content="Tom Dawson" />
+    <meta itemprop="givenName" content="Tom" />
+    <meta itemprop="familyName" content="Dawson" />
+    <meta itemprop="email" content="tomdaw92@gmail.com" />
+    <meta itemprop="gender" content="Male" />
+    <meta itemprop="hasOccupation" content="Software Developer" />
+    <meta itemprop="homeLocation" content="Brisbane, Australia" />
+    <meta
+      itemprop="knowsAbout"
+      content="HTML, CSS, JavaScript, Sass, React, Node.js, MongoDB, Git, GitHub, SEO, Web Optimisation, WordPress, WooCommerce, Divi, cPanel/WHM, Jira Administration/Automation, Azure AD, Agile, DevOps"
+    />
+  </head>
+  <body class="preload">
+    <div id="site-wrapper">
+      <header class="container">
+        <div>
+          <h1>
+            <span class="visually-hidden">Tom Dawson</span>
+            <svg id="tom-dawson" aria-hidden="true" focusable="false">
+              <text>Tom Dawson</text>
+            </svg>
+          </h1>
+          <p>Front End Developer</p>
         </div>
-      </nav>
-      <hr>
-    </header>
-    <main class="container">
-      <summary class="sub-container">
-        <h2>About Me</h2>
-        <p class="about">
-          Experienced IT professional with a Bachelor of Information Technology and over 6 years of experience in IT support and web development. Highly skilled in troubleshooting complex system issues, developing project management solutions, and delivering exceptional customer service. Proficient in various programming languages and tools such as HTML, CSS, JavaScript, Node, React, MongoDB, WordPress, and the Atlassian suite.
-        </p>
-      </summary>
-      <section class="sub-container">
-        <h3>Experience</h3>
-        <p>
-          <span class="date">Nov '21 — Dec '22</span>
-          <span class="p-title">Swyftx</span>
-          <span class="p-subtitle">Application Support Engineer</span>
+        <hr />
+      </header>
+      <main class="container">
+        <nav>
+          <div>
+            <a href="https://github.com/TomDawson" target="_blank"
+              ><img alt="GitHub" src="images/github.svg" class="social-icon"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/tom-dawson-094217101/"
+              target="_blank"
+              ><img
+                alt="LinkedIn"
+                src="images/linkedin.svg"
+                class="social-icon"
+            /></a>
+            <a class="email-address" href="mailto:tomdaw92@gmail.com"
+              >tomdaw92@gmail.com</a
+            >
+          </div>
+          <div id="toggle-container">
+            <button id="theme-toggle" class="pixel-button" type="button">
+              <span id="light-mode-span">Light Mode</span>
+              <span id="dark-mode-span">Dark Mode</span>
+            </button>
+          </div>
+        </nav>
+        <summary class="sub-container">
+          <h2>About Me</h2>
+          <p class="about">
+            Experienced IT professional with a Bachelor of Information
+            Technology and over 6 years of experience in IT support and web
+            development. Highly skilled in troubleshooting complex system
+            issues, developing project management solutions, and delivering
+            exceptional customer service. Proficient in various programming
+            languages and tools such as HTML, CSS, JavaScript, Node, React,
+            MongoDB, WordPress, and the Atlassian suite.
+          </p>
+        </summary>
+        <section class="sub-container">
+          <h3>Experience</h3>
+          <p>
+            <span class="date">Nov '21 — Dec '22</span>
+            <span class="p-title">Swyftx</span>
+            <span class="p-subtitle">Application Support Engineer</span>
+          </p>
           <ul class="experience-list">
-            <li>Acted as the point of escalation for troubleshooting advanced system issues and configuration changes; consistently achieved 5/5 satisfaction feedback by providing high-level service to internal clients.</li>
-            <li>Spearheaded the ground-up development of JIRA-based IT Helpdesk configuration based on ITSM best-practices, iterated continually in line with Agile/Lean principles.</li>
+            <li>
+              Acted as the point of escalation for troubleshooting advanced
+              system issues and configuration changes; consistently achieved 5/5
+              satisfaction feedback by providing high-level service to internal
+              clients.
+            </li>
+            <li>
+              Spearheaded the ground-up development of JIRA-based IT Helpdesk
+              configuration based on ITSM best-practices, iterated continually
+              in line with Agile/Lean principles.
+            </li>
           </ul>
-        </p>
+          <p>
+            <span class="date">January 2014 — July 2017</span>
+            <span class="p-title">Queensland University of Technology</span>
+            <span class="p-subtitle">Bachelor of Information Technology</span>
+            <span class="description"
+              >GPA: 6.5 | Achieved HD in Unix Network Administration, Network
+              Planning, and Internet Protocols and Services.</span
+            >
+          </p>
+          <p>
+            <span class="date">January 2014 — July 2017</span>
+            <span class="p-title">Queensland University of Technology</span>
+            <span class="p-subtitle">Bachelor of Information Technology</span>
+            <span class="description"
+              >GPA: 6.5 | Achieved HD in Unix Network Administration, Network
+              Planning, and Internet Protocols and Services.</span
+            >
+          </p>
+        </section>
+        <section class="sub-container">
+          <h4>Education</h4>
+          <p>
+            <span class="date">September '22</span>
+            <span class="p-title">Udemy</span>
+            <span class="p-subtitle"
+              >Complete 2022 Web Development Bootcamp</span
+            >
+            <span class="description"
+              >HTML, CSS, Javascript, Node.js, React, MongoDB.
+              <a
+                target="_blank"
+                href="https://www.udemy.com/certificate/UC-0914e4fc-0177-4a59-8f55-6ad1140581eb/"
+                >Certificate Link</a
+              >
+            </span>
+          </p>
+          <p>
+            <span class="date">Jan '14 — Jul '17</span>
+            <span class="p-title">Queensland University of Technology</span>
+            <span class="p-subtitle">Bachelor of Information Technology</span>
+            <span class="description"
+              >GPA: 6.5 — Achieved HD in Unix Network Administration, Network
+              Planning, and Internet Protocols and Services.</span
+            >
+          </p>
+          <p>
+            <span class="date">Feb — Nov '13</span>
+            <span class="p-title">Southbank Institute of Technology</span>
+            <span class="p-subtitle">Diploma of IT Networking</span>
+            <span class="description"
+              >Worked with Cisco routers/switches, and Oracle/Microsoft virtual
+              machines to configure functional modern networks.</span
+            >
+          </p>
+        </section>
+        <section class="sub-container">
+          <h5>Competencies</h5>
+          <ul class="flex-container">
+            <li class="primary-skill">HTML</li>
+            <li class="primary-skill">CSS</li>
+            <li class="primary-skill">JavaScript</li>
+            <li class="primary-skill">React</li>
+            <li class="primary-skill">Node.js</li>
+            <li class="primary-skill">MongoDB</li>
+            <li class="primary-skill">Responsive Design</li>
+            <li class="primary-skill">SEO</li>
+            <li class="primary-skill">Git</li>
+            <li class="primary-skill">GitHub</li>
+            <li class="secondary-skill">Jira Admin</li>
+            <li class="secondary-skill">Confluence Admin</li>
+            <li class="secondary-skill">OpsGenie Admin</li>
+            <li class="secondary-skill">Azure AD</li>
+            <li class="secondary-skill">Agile</li>
+            <li class="secondary-skill">DevOps</li>
+            <li class="secondary-skill">Website Optimisation</li>
+            <li class="secondary-skill">WordPress</li>
+            <li class="secondary-skill">Divi</li>
+            <li class="secondary-skill">WooCommerce</li>
+            <li class="secondary-skill">cPanel/WHM</li>
+          </ul>
+        </section>
+      </main>
+      <footer class="container">
+        <!-- php inserts current year -->
         <p>
-          <span class="date">January 2014 — July 2017</span>
-          <span class="p-title">Queensland University of Technology</span>
-          <span class="p-subtitle">Bachelor of Information Technology</span>
-          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
+          &copy;<?php echo date("Y"); ?>
+          Tom Dawson <span class="obviously">obviously</span>
         </p>
-        <p>
-          <span class="date">January 2014 — July 2017</span>
-          <span class="p-title">Queensland University of Technology</span>
-          <span class="p-subtitle">Bachelor of Information Technology</span>
-          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
-        </p>
-      </section>
-      <section class="sub-container">
-        <h4>Education</h4>
-        <p>
-          <span class="date">September '22</span>
-          <span class="p-title">Udemy</span>
-          <span class="p-subtitle">Complete 2022 Web Development Bootcamp</span>
-          <span class="description">HTML, CSS, Javascript, Node.js, React, MongoDB.
-            <a target="_blank" href="https://www.udemy.com/certificate/UC-0914e4fc-0177-4a59-8f55-6ad1140581eb/">Certificate Link</a>
-          </span>
-        </p>
-        <p>
-          <span class="date">Jan '14 — Jul '17</span>
-          <span class="p-title">Queensland University of Technology</span>
-          <span class="p-subtitle">Bachelor of Information Technology</span>
-          <span class="description">GPA: 6.5 — Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
-        </p>
-        <p>
-          <span class="date">Feb — Nov '13</span>
-          <span class="p-title">Southbank Institute of Technology</span>
-          <span class="p-subtitle">Diploma of IT Networking</span>
-          <span class="description">Worked with Cisco routers/switches, and Oracle/Microsoft virtual machines to configure functional modern networks.</span>
-        </p>
-      </section>
-      <section class="sub-container">
-        <h5>Competencies</h5>
-        <ul class="flex-container">
-          <li class="primary-skill">HTML</li>
-          <li class="primary-skill">CSS</li>
-          <li class="primary-skill">JavaScript</li>
-          <li class="primary-skill">React</li>
-          <li class="primary-skill">Node.js</li>
-          <li class="primary-skill">MongoDB</li>
-          <li class="primary-skill">Responsive Design</li>
-          <li class="primary-skill">SEO</li>
-          <li class="primary-skill">Git</li>
-          <li class="primary-skill">GitHub</li>
-          <li class="secondary-skill">Jira Admin</li>
-          <li class="secondary-skill">Confluence Admin</li>
-          <li class="secondary-skill">OpsGenie Admin</li>
-          <li class="secondary-skill">Azure AD</li>
-          <li class="secondary-skill">Agile</li>
-          <li class="secondary-skill">DevOps</li>
-          <li class="secondary-skill">Website Optimisation</li>
-          <li class="secondary-skill">WordPress</li>
-          <li class="secondary-skill">Divi</li>
-          <li class="secondary-skill">WooCommerce</li>
-          <li class="secondary-skill">cPanel/WHM</li>
-        </ul>
-      </section>
-    </main>
-    <footer class="container"><!-- php inserts current year -->
-      <p>&copy;<?php echo date("Y"); ?> Tom Dawson <span class="obviously">obviously</span></p>
-    </footer>
-  </div>
-  <!-- Asynchronous JS -->
-  <script src="./scripts/script.js"></script>
-</body>
+      </footer>
+    </div>
+    <!-- Asynchronous JS -->
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>
