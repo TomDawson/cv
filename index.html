@@ -55,11 +55,15 @@
 <body class="preload">
   <div id="site-wrapper">
     <header class="container">
-      <h1 class="chromatic-abberation">
-        <span id="h1-tom">Tom</span>
-        <span id="h1-dawson">Dawson</span>
-      </h1>
-      <p>Front End Developer</p>
+      <div class="title-card">
+        <h1>
+          <span class="visually-hidden">Tom Dawson</span>
+          <svg width="100%" height="40px" id="tom-dawson" aria-hidden="true" focusable="false">
+            <text x="0" y="38">Tom Dawson</text>
+          </svg>
+        </h1>
+        <p>Front End Developer</p>
+      </div>
       <nav>
         <ul>
           <li>
@@ -85,49 +89,58 @@
       <summary class="sub-container">
         <h2>About Me</h2>
         <p class="about">
-          Lorem ipsum dqwdolorwdqwdqwdqwqwddwqwqd sit amet, qwqwwqffqwfwqfwqfqwfqwdqwwqwdfqwqwdqwdfwqfwqqfwqfwqfwfqwqfwfqwconsectetur adipiscing elit. Integer
-          posuere erat a ante.
+          Experienced IT professional with a Bachelor of Information Technology and over 6 years of experience in IT support and web development. Highly skilled in troubleshooting complex system issues, developing project management solutions, and delivering exceptional customer service. Proficient in various programming languages and tools such as HTML, CSS, JavaScript, Node, React, MongoDB, WordPress, and the Atlassian suite.
         </p>
       </summary>
       <section class="sub-container">
-        <h3>Experience</h4>
+        <h3>Experience</h3>
         <p>
-          <span class="date">November 2021 — Current</span>
-          <span class="p-title"><em>Swyftx</em> - Application Support Engineer</span>
+          <span class="date">Nov '21 — Dec '22</span>
+          <span class="p-title">Swyftx</span>
+          <span class="p-subtitle">Application Support Engineer</span>
+          <ul class="experience-list">
+            <li>Acted as the point of escalation for troubleshooting advanced system issues and configuration changes; consistently achieved 5/5 satisfaction feedback by providing high-level service to internal clients.</li>
+            <li>Spearheaded the ground-up development of JIRA-based IT Helpdesk configuration based on ITSM best-practices, iterated continually in line with Agile/Lean principles.</li>
+          </ul>
+        </p>
+        <p>
+          <span class="date">January 2014 — July 2017</span>
+          <span class="p-title">Queensland University of Technology</span>
+          <span class="p-subtitle">Bachelor of Information Technology</span>
           <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
         <p>
           <span class="date">January 2014 — July 2017</span>
-          <span class="p-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
-          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
-        </p>
-        <p>
-          <span class="date">January 2014 — July 2017</span>
-          <span class="p-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
+          <span class="p-title">Queensland University of Technology</span>
+          <span class="p-subtitle">Bachelor of Information Technology</span>
           <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
       </section>
       <section class="sub-container">
-        <h4>Education</h3>
+        <h4>Education</h4>
         <p>
-          <span class="date">September 2022</span>
-          <span class="p-title"><em>Udemy,</em> Complete 2022 Web Development Bootcamp</span>
-          <span class="description"><a target="_blank" href="https://www.udemy.com/certificate/UC-0914e4fc-0177-4a59-8f55-6ad1140581eb/">Certificate Link</a></span>
+          <span class="date">September '22</span>
+          <span class="p-title">Udemy</span>
+          <span class="p-subtitle">Complete 2022 Web Development Bootcamp</span>
+          <span class="description">HTML, CSS, Javascript, Node.js, React, MongoDB.
+            <a target="_blank" href="https://www.udemy.com/certificate/UC-0914e4fc-0177-4a59-8f55-6ad1140581eb/">Certificate Link</a>
+          </span>
         </p>
         <p>
-          <span class="date">Jan 2014 — Jul 2017</span>
-          <span class="p-title"><em>Queensland University of Technology</em> Bachelor of Information Technology</span>
-          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
+          <span class="date">Jan '14 — Jul '17</span>
+          <span class="p-title">Queensland University of Technology</span>
+          <span class="p-subtitle">Bachelor of Information Technology</span>
+          <span class="description">GPA: 6.5 — Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
         <p>
-          <span class="date">// Feb — Nov 2013</span>
+          <span class="date">Feb — Nov '13</span>
           <span class="p-title">Southbank Institute of Technology</span>
-          <span class="p-subtitle">Diploma of IT (Networking)</span>
+          <span class="p-subtitle">Diploma of IT Networking</span>
           <span class="description">Worked with Cisco routers/switches, and Oracle/Microsoft virtual machines to configure functional modern networks.</span>
-        </p>    
+        </p>
       </section>
       <section class="sub-container">
-        <h5>Competencies</h2>
+        <h5>Competencies</h5>
         <ul class="flex-container">
           <li class="primary-skill">HTML</li>
           <li class="primary-skill">CSS</li>
@@ -156,37 +169,6 @@
     <footer class="container"><!-- php inserts current year -->
       <p>&copy;<?php echo date("Y"); ?> Tom Dawson <span class="obviously">obviously</span></p>
     </footer>
-    <!-- Chromatic Abberation | Values = "R/G/B/A" -->
-
-
-    <svg width="0" height="0">
-      <filter id="chromatic-abberation">
-
-
-        <feColorMatrix type="matrix" 
-          result="red_"             
-          values="3 0 0 0 0 
-                  0 1 0 0 0 
-                  0 0 1 0 0 
-                  0 0 0 1 0"/>
-        <feOffset in="red_" dx="2" dy="-2" result="red"/>
-
-
-        <feColorMatrix type="matrix" 
-          in="SourceGraphic"             
-          result="blue_"             
-          values="1 0 0 0 0
-                  0 1 0 0 0 
-                  0 0 5 0 0 
-                  0 0 0 1 0"/>
-        <feOffset in="blue_" dx="-2" dy="2" result="blue"/>    
-        <feBlend mode="screen" in="red" in2="blue"/>
-
-        
-      </filter>
-    </svg>
-
-
   </div>
   <!-- Asynchronous JS -->
   <script src="./scripts/script.js"></script>
