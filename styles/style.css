@@ -1,36 +1,35 @@
 /* Theming and Structure */
 
 html[data-theme='light'] {
-  --text-1: #0B1014;
-  --text-2: #49789e;
-  --background: #D1D5D4;/* Opaque background overlay */
-  --link: #A288E3;
-  --accent-1: #A288E3;
-  --accent-2: #A288E3;
-  --highlight-background: var(--text-1);
-  --highlight-text: var(--accent-1);
+  --background: #D1D5D4;
+  --text-body: #0B1014;
+  --text-link: #009BC6;
+  --text-faded: #49789e;
+  --text-title: #c2a212;
+  --text-subtitle: #BA5C12;
+  --accent-1: pink;
+  --accent-2: blue;
 }
 
 html[data-theme='dark'] {
-  --text-1: #E3E3DD;
-  --text-2: #a5a59f;
-  --background: #30312c;/* Transparent background overlay */
-  --link: #A288E3;
-  --accent-1: #A288E3;
-  --accent-2: #A288E3;
-  --highlight-background: var(--text-1);
-  --highlight-text: var(--accent-1);
+  --background: #1B1B26;
+  --text-body: #E3E3DD;
+  --text-link: #AA9FFF;
+  --text-faded: #435260;
+  --text-title: #AA9FFF;
+  --text-subtitle: #F5D324;
+  --accent-1: #fff;
+  --accent-2: #000;
 }
 
 body {
   font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-size: 18px;
-  color: var(--text-1);
+  font-size: 1.1em;
+  color: var(--text-body);
   background-color: var(--background);
   text-align: left;
   text-rendering: optimizeSpeed;
   line-height: 1.3;
-  letter-spacing: 0em;
   margin: 0;
   padding: 0;
 }
@@ -46,7 +45,7 @@ body {
   z-index: 1;
 }
 
-#crt {
+/*#crt {
   background-image: url('../images/crt.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -57,7 +56,7 @@ body {
   position: absolute;
   z-index: 3;
   opacity: 0.9;
-}
+}*/
 
 /* Typography */
 
@@ -65,11 +64,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Pixel NES', sans-serif;
   font-weight: 100;
   margin: 0;
-}
-
-h2, h3, h4, h5, h6 {
-  font-size:1.3em;
-  margin-block: 1em;
   line-height:1;
 }
 
@@ -77,45 +71,19 @@ h1 {
   font-size: 3em;
   line-height: 1;
   text-transform: uppercase;
-  overflow: hidden;
+  overflow: visible;
   letter-spacing: 2px;
 }
 
 #h1-tom {
-  -webkit-text-stroke: 1px var(--text-1);
+  -webkit-text-stroke: 1px var(--accent-1);
   -webkit-text-fill-color: var(--accent-2);
   margin-right: -10px;
 }
 
 #h1-dawson {
-  -webkit-text-stroke: 1px var(--text-1);
+  -webkit-text-stroke: 1px var(--accent-2);
   -webkit-text-fill-color: var(--accent-1);
-}
-
-em {
-  font-weight: 700;
-  font-style: normal;
-  color: var(--accent-1);
-}
-
-.list-title {
-  display: block;
-  padding-bottom: 4px;
-  /* Underline Stuff
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--accent-1);
-  */
-}
-
-.date {
-  color: var(--text-2);
-  display: block;
-  padding-bottom: 10px;
-  font-size: 0.85em;
-  font-style:normal;
 }
 
 /* Chromatic Abberation */
@@ -124,6 +92,57 @@ em {
   -webkit-filter: url(#chromatic-abberation);
   filter: url(#chromatic-abberation);
 }
+
+h2, h3, h4, h5, h6 {
+  font-size:1.1em;
+  margin-block: 1em;
+}
+
+/*
+.about {
+
+};
+*/
+
+.date {
+  color: var(--text-faded);
+  display: block;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+  font-style:normal;
+}
+
+.p-title {
+  padding-bottom: 0.5em;
+  color: var(--text-title);
+}
+/*.p-title::after {}*/
+
+.p-subtitle {
+  color: var(--text-body);
+  font-style: italic;
+  font-weight: 100;
+}
+
+.p-subtitle::before {
+  content: ' | ';
+  color: var(--text-subtitle);
+}
+
+.description {
+  display:block;
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+
+/*
+.description::before {
+  position: absolute;
+  left:0px;
+  color: var(--text-2);
+  content:'·';
+}
+*/
 
 /* Page Structure */
 
@@ -173,12 +192,12 @@ p:not(:last-child) {
 }
 
 .primary-skill {
-  background-color: var(--accent-1);
+  background-color: var(--text-title);
   color: var(--background);
 }
 
 .secondary-skill {
-  background-color: var(--accent-2);
+  background-color: var(--text-subtitle);
   color: var(--background);
 }
 
@@ -190,11 +209,11 @@ hr {
   margin: 45px 0px 10px 0px;
   padding:0px 15px 0px 15px;
   border: none;
-  border-bottom: dashed 3px var(--accent-1);
+  border-bottom: dashed 3px var(--text-title);
 }
 
 a {
-  color: var(--accent-1);
+  color: var(--text-title);
 }
 
 a:hover, img:hover {
@@ -233,14 +252,14 @@ header nav a.email-address {
 }
 
 ::selection {
-  background: var(--highlight-background);
-  color: var(--highlight-text);
+  background: var(--text-body);
+  color: var(--background);
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: var(--highlight-background);
-  color: var(--highlight-text);
+  background: var(--text-body);
+  color: var(--background);
   text-shadow: none;
 }
 
@@ -253,7 +272,7 @@ footer.container {
 }
 
 .obviously {
-  color: var(--accent-1);
+  color: var(--text-title);
   font-size: 0.6rem;
   font-style: italic;
   font-weight: 100;
@@ -262,11 +281,55 @@ footer.container {
 /* Scrollbar */
 
 ::-webkit-scrollbar { 
-  width: 5px;
-  background: var(--accent-1); /* Background */
+  width: 4px;
+  background: var(--background); /* Background */
 }
 
 ::-webkit-scrollbar-thumb { 
-  border-radius: 0px;
-  background: var(--background); /* Foreground */
+  background: var(--text-title); /* Foreground */
+}
+
+/* Button styling */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    overflow: visible;
+    font-family: 'Pixel NES', sans-serif;
+    font-size: 16px;
+    line-height: 1.15;
+    margin: 0;
+    text-transform: none;
+    appearance: button;
+    -webkit-appearance: button;
+    border-width:0px;
+}
+
+/* Pixel Button */
+.pixel-button {
+    cursor: pointer;
+    display: block;
+    padding: 7px 10px;
+    margin-left: 5px; /* Offset box-shadow for alignment */
+    min-width: 195px;
+    max-width: 195px;
+    color: var(--background);
+    background-color: var(--text-body);
+    box-shadow:   -5px 0 0 0 var(--text-body),
+                   5px 0 0 0 var(--text-body),
+                   0 -5px 0 0 var(--text-body),
+                   0 5px 0 0 var(--text-body);
+}
+
+.pixel-button:active {
+    top: 2px;
+}
+
+.pixel-button:hover {
+    color: var(--text-body);
+    background-color: var(--text-title);
+    box-shadow:   -5px 0 0 0 var(--text-title),
+                   5px 0 0 0 var(--text-title),
+                   0 -5px 0 0 var(--text-title),
+                   0 5px 0 0 var(--text-title);
 }

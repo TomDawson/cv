@@ -12,7 +12,7 @@ html:focus-within {
   }
 
 /* Transitions */
-nav, hr, img, a, .container, #h1-tom, #h1-dawson, .primary-skill, .secondary-skill {
+nav, hr, img, a, .container, #h1-tom, #h1-dawson, .primary-skill, .secondary-skill, .pixel-button {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -27,3 +27,4 @@ nav, hr, img, a, .container, #h1-tom, #h1-dawson, .primary-skill, .secondary-ski
   body {
     transition: background 0.3s;
   }
+

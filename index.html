@@ -8,7 +8,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./styles/fonts.css"/>
   <link rel="stylesheet" href="./styles/style.css"/>
-  <link rel="stylesheet" href="./styles/buttons.css"/>
   <link rel="stylesheet" href="./styles/animations.css"/>
   <!-- SEO -->
   <title>Tom Dawson | Front End Developer</title>
@@ -55,9 +54,11 @@
 </head>
 <body class="preload">
   <div id="site-wrapper">
-    <div id="crt"></div>
     <header class="container">
-      <h1 class="chromatic-abberation"><span id="h1-tom">Tom</span> <span id="h1-dawson">Dawson</span></h1>
+      <h1 class="chromatic-abberation">
+        <span id="h1-tom">Tom</span>
+        <span id="h1-dawson">Dawson</span>
+      </h1>
       <p>Front End Developer</p>
       <nav>
         <ul>
@@ -83,7 +84,7 @@
     <main class="container">
       <summary class="sub-container">
         <h2>About Me</h2>
-        <p>
+        <p class="about">
           Lorem ipsum dqwdolorwdqwdqwdqwqwddwqwqd sit amet, qwqwwqffqwfwqfwqfqwfqwdqwwqwdfqwqwdqwdfwqfwqqfwqfwqfwfqwqfwfqwconsectetur adipiscing elit. Integer
           posuere erat a ante.
         </p>
@@ -91,36 +92,38 @@
       <section class="sub-container">
         <h3>Experience</h4>
         <p>
-          <span class="date">November 2021 – Current</span>
-          <span class="list-title"><em>Swyftx</em> - Application Support Engineer</span>
-          GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.
+          <span class="date">November 2021 — Current</span>
+          <span class="p-title"><em>Swyftx</em> - Application Support Engineer</span>
+          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
         <p>
-          <span class="date">January 2014 – July 2017</span>
-          <span class="list-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
-          GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.
+          <span class="date">January 2014 — July 2017</span>
+          <span class="p-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
+          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
         <p>
-          <span class="date">January 2014 – July 2017</span>
-          <span class="list-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
-          GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.
+          <span class="date">January 2014 — July 2017</span>
+          <span class="p-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
+          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
       </section>
       <section class="sub-container">
         <h4>Education</h3>
         <p>
           <span class="date">September 2022</span>
-          <span class="list-title"><em>Udemy,</em> Complete 2022 Web Development Bootcamp</span><a target="_blank" href="https://www.udemy.com/certificate/UC-0914e4fc-0177-4a59-8f55-6ad1140581eb/">Certificate Link</a>
+          <span class="p-title"><em>Udemy,</em> Complete 2022 Web Development Bootcamp</span>
+          <span class="description"><a target="_blank" href="https://www.udemy.com/certificate/UC-0914e4fc-0177-4a59-8f55-6ad1140581eb/">Certificate Link</a></span>
         </p>
         <p>
-          <span class="date">January 2014 – July 2017</span>
-          <span class="list-title"><em>Queensland University of Technology,</em> Bachelor of Information Technology</span>
-          GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.
+          <span class="date">Jan 2014 — Jul 2017</span>
+          <span class="p-title"><em>Queensland University of Technology</em> Bachelor of Information Technology</span>
+          <span class="description">GPA: 6.5 | Achieved HD in Unix Network Administration, Network Planning, and Internet Protocols and Services.</span>
         </p>
         <p>
-          <span class="date">February 2013 - November 2013</span>
-          <span class="list-title"><em>Southbank Institute of Technology,</em> Diploma of IT (Networking)</span>
-          Worked with Cisco routers/switches, and Oracle/Microsoft virtual machines to configure functional modern networks.
+          <span class="date">// Feb — Nov 2013</span>
+          <span class="p-title">Southbank Institute of Technology</span>
+          <span class="p-subtitle">Diploma of IT (Networking)</span>
+          <span class="description">Worked with Cisco routers/switches, and Oracle/Microsoft virtual machines to configure functional modern networks.</span>
         </p>    
       </section>
       <section class="sub-container">
@@ -136,7 +139,9 @@
           <li class="primary-skill">SEO</li>
           <li class="primary-skill">Git</li>
           <li class="primary-skill">GitHub</li>
-          <li class="secondary-skill">Jira Administration+Automation</li>
+          <li class="secondary-skill">Jira Admin</li>
+          <li class="secondary-skill">Confluence Admin</li>
+          <li class="secondary-skill">OpsGenie Admin</li>
           <li class="secondary-skill">Azure AD</li>
           <li class="secondary-skill">Agile</li>
           <li class="secondary-skill">DevOps</li>
@@ -152,8 +157,12 @@
       <p>&copy;<?php echo date("Y"); ?> Tom Dawson <span class="obviously">obviously</span></p>
     </footer>
     <!-- Chromatic Abberation | Values = "R/G/B/A" -->
+
+
     <svg width="0" height="0">
       <filter id="chromatic-abberation">
+
+
         <feColorMatrix type="matrix" 
           result="red_"             
           values="3 0 0 0 0 
@@ -161,6 +170,8 @@
                   0 0 1 0 0 
                   0 0 0 1 0"/>
         <feOffset in="red_" dx="2" dy="-2" result="red"/>
+
+
         <feColorMatrix type="matrix" 
           in="SourceGraphic"             
           result="blue_"             
@@ -170,8 +181,12 @@
                   0 0 0 1 0"/>
         <feOffset in="blue_" dx="-2" dy="2" result="blue"/>    
         <feBlend mode="screen" in="red" in2="blue"/>
+
+        
       </filter>
     </svg>
+
+
   </div>
   <!-- Asynchronous JS -->
   <script src="./scripts/script.js"></script>
