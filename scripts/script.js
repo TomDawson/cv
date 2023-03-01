@@ -1,10 +1,16 @@
 console.log('- .... . .-. . -....- .. ... -....- -. --- -....- .--- --- -.- . -....- .... . .-. .');
 
-//// Theme Swapping: Start
-var themeToggle = document.getElementById('theme-toggle');
-var darkModeSpan = document.getElementById('dark-mode-span');
-var lightModeSpan = document.getElementById('light-mode-span');
-var socialIcons = document.getElementsByClassName('social-icon');
+//// Removes .preload from <body> after page load to enable transitions.
+window.onload = function() {
+    document.body.classList.remove('preload');
+  };
+
+
+//// Theme Swapping
+const themeToggle = document.getElementById('theme-toggle');
+const darkModeSpan = document.getElementById('dark-mode-span');
+const lightModeSpan = document.getElementById('light-mode-span');
+const socialIcons = document.getElementsByClassName('social-icon');
 
 // Retrieve theme preference from device
 var storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -55,10 +61,13 @@ function refreshThemeToggle() {
 };
 
 refreshThemeToggle();
-//// Theme Swapping: End
 
-// Removes .preload from <body> after page load to enable transitions.
-window.onload = function() {
-    document.body.classList.remove('preload');
-  };
+//// Monitor when #navbar changes in visibility and if it triggers CSS position: sticky;, apply class .sticky to allow styling.
+const navbar = document.getElementById("navbar");
 
+const navbarObserver = new IntersectionObserver( 
+    ([e]) => e.target.classList.toggle("sticky", e.intersectionRatio < 1),
+    { threshold: [1] }
+    );
+
+navbarObserver.observe(navbar);

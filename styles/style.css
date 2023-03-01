@@ -2,6 +2,7 @@
 
 html[data-theme='light'] {
   --background: #D1D5D4;
+  --nav-background: #d1d5d4a4;
   --text-body: #0B1014;
   --text-link: #009BC6;
   --text-faded: #49789e;
@@ -13,6 +14,7 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   --background: #1B1B26;
+  --nav-background: #1b1b26ad;
   --text-body: #E3E3DD;
   --text-link: #AA9FFF;
   --text-faded: #435260;
@@ -133,7 +135,7 @@ p:not(:last-child) {
 }
 
 .container {
-  padding: 0px 15px 15px 15px;
+  padding: 0;
   width: clamp(0px, 95vw, 680px); /* always shrinks, prefers 95vw, max 680px */
   margin-left: auto;
   margin-right: auto;
@@ -148,7 +150,7 @@ p:not(:last-child) {
 
 
 .sub-container {
-  padding: 0px 0px 10px 0px;
+  padding: 0px 10px;
   position: relative;
   z-index: 2;
 }
@@ -183,16 +185,15 @@ p:not(:last-child) {
   color: var(--background);
 }
 
+/*
 hr {
-  /* Width extends beyond container bounds
-  width: 100%;*/
   height: 2px;
   margin: auto;
   margin: 45px 0px 10px 0px;
   padding:0px 15px 0px 15px;
   border: none;
   border-bottom: dashed 3px var(--text-title);
-}
+}*/
 
 a {
   color: var(--text-title);
@@ -208,14 +209,29 @@ header.container {
   margin-top:30px;
 }
 
-nav {
+nav /* #navbar */ {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
   position: sticky;
-  top: 0px;
-  background-color: var(--background);
+  top: -1px; /* -1px is important for JS to apply .sticky class to nav */
   z-index: 10;
-  padding-bottom: 15px 0px 15px 0px;
+  padding: 15px 0px 15px 0px;
+  border-bottom: solid 1px var(--text-title); /* Perf. line border */
+}
+
+.nav-left {
+  width: 50%;  
+}
+
+.nav-right {
+  width: 50%;
+  margin-left: auto;
+}
+
+.sticky {
+  backdrop-filter: blur(5px);
+  background-color: var(--nav-background);
 }
 
 nav a {
@@ -224,15 +240,31 @@ nav a {
 
 nav #toggle-container {
   justify-content: flex-end;
+  display: flex;
 }
 
 a {
   text-decoration: none;
 }
 
+.email-address {
+  display: flex;
+  height:100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.social-icon-container {
+  height: 100%;
+  width: auto;
+}
+
 /* Social Links */
 .social-icon {
-  width:20px;
+  float: left;
+  height: auto;
+  width: 25px;
+  margin-right: 5px;
 }
 /* Remove selection highlight */
 .social-icon::selection {
@@ -269,12 +301,13 @@ footer.container {
 /* Scrollbar */
 
 ::-webkit-scrollbar { 
-  width: 4px;
-  background: var(--background); /* Background */
+  width: 6px;
+  background: transparent; /* Background */
 }
 
 ::-webkit-scrollbar-thumb { 
   background: var(--text-title); /* Foreground */
+  transition: all 0.3s; 
 }
 
 /* Button styling */
@@ -295,18 +328,16 @@ button,
 
 /* Pixel Button */
 .pixel-button {
-    cursor: pointer;
-    display: block;
-    padding: 7px 10px;
-    margin-left: 5px; /* Offset box-shadow for alignment */
-    min-width: 195px;
-    max-width: 195px;
-    color: var(--background);
-    background-color: var(--text-body);
-    box-shadow:   -5px 0 0 0 var(--text-body),
-                   5px 0 0 0 var(--text-body),
-                   0 -5px 0 0 var(--text-body),
-                   0 5px 0 0 var(--text-body);
+  cursor: pointer;
+  display: block;
+  padding: 7px 10px;
+  margin-right: 5px;
+  color: var(--background);
+  background-color: var(--text-body);
+  box-shadow:   -5px 0 0 0 var(--text-body),
+                  5px 0 0 0 var(--text-body),
+                  0 -5px 0 0 var(--text-body),
+                  0 5px 0 0 var(--text-body);
 }
 
 .pixel-button:active {
@@ -314,12 +345,12 @@ button,
 }
 
 .pixel-button:hover {
-    color: var(--text-body);
-    background-color: var(--text-title);
-    box-shadow:   -5px 0 0 0 var(--text-title),
-                   5px 0 0 0 var(--text-title),
-                   0 -5px 0 0 var(--text-title),
-                   0 5px 0 0 var(--text-title);
+  color: var(--text-body);
+  background-color: var(--text-title);
+  box-shadow:   -5px 0 0 0 var(--text-title),
+                  5px 0 0 0 var(--text-title),
+                  0 -5px 0 0 var(--text-title),
+                  0 5px 0 0 var(--text-title);
 }
 
 .visually-hidden { 
