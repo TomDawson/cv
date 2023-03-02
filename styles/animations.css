@@ -21,6 +21,7 @@ a,
 .secondary-skill,
 .pixel-button,
 #tom-dawson,
+#front-end-developer,
 .p-subtitle,
 .p-subtitle::before,
 .p-title {
@@ -40,6 +41,8 @@ body {
   transition: background 0.3s;
 }
 
+/* Heading Animation */
+
 #tom-dawson { /* SVG element */
   animation: stroke 4s;
   fill: var(--stroke);
@@ -47,22 +50,25 @@ body {
   stroke-width: 0.5px;
 }
 
+#front-end-developer {
+  animation: stroke 5s;
+  fill: var(--stroke-2);
+  stroke: var(--stroke-2);
+  stroke-width: 0.5px;
+}
+
 @keyframes stroke {
   0% {
     fill: transparent;
-    stroke: var(--stroke);
     stroke-dashoffset: 25%;
     stroke-dasharray: 0 50%; /* No stroke whatsoever */
     stroke-width: 0.5;
   }
   70% {
     fill: transparent;
-    stroke: var(--stroke);
     stroke-width: 0.5;
   }
   100% {
-    fill: var(--stroke);
-    stroke: var(--stroke);
     stroke-dashoffset: -25%;
     stroke-dasharray: 50% 0; /* Unbroken stroke */
     stroke-width: 0.5;

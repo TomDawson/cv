@@ -64,10 +64,12 @@ refreshThemeToggle();
 
 //// Monitor when #navbar changes in visibility and if it triggers CSS position: sticky;, apply class .sticky to allow styling.
 const navbar = document.getElementById("navbar");
+const footer = document.getElementById("footer-global");
 
-const navbarObserver = new IntersectionObserver( 
+const stickyObserver = new IntersectionObserver( 
     ([e]) => e.target.classList.toggle("sticky", e.intersectionRatio < 1),
     { threshold: [1] }
     );
 
-navbarObserver.observe(navbar);
+stickyObserver.observe(navbar);
+stickyObserver.observe(footer);

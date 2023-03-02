@@ -5,11 +5,13 @@ html[data-theme='light'] {
   --nav-background: #d1d5d4a4;
   --text-body: #0B1014;
   --text-link: #009BC6;
+  --text-link-hover: #009BC6;
   --text-faded: #49789e;
-  --text-title: #c2a212;
+  --text-title: #009BC6;
   --text-subtitle: #BA5C12;
-  /* Name animation */
-  --stroke: #000;
+  /* Heading Animation */
+  --stroke: #009BC6;
+  --stroke-2: #0B1014;;
 }
 
 html[data-theme='dark'] {
@@ -17,11 +19,13 @@ html[data-theme='dark'] {
   --nav-background: #1b1b26ad;
   --text-body: #E3E3DD;
   --text-link: #AA9FFF;
+  --text-link-hover: #AA9FFF;
   --text-faded: #435260;
   --text-title: #AA9FFF;
   --text-subtitle: #F5D324;
-  /* Name animation */
+  /* Heading Animation */
   --stroke: #AA9FFF;
+  --stroke-2: #E3E3DD;;
 }
 
 body {
@@ -36,6 +40,10 @@ body {
   padding: 0;
 }
 
+p {
+  margin: 0;
+}
+
 #site-wrapper {
   display: flex;
   min-height: 100vh; /* container always  */
@@ -47,41 +55,21 @@ body {
   z-index: 1;
 }
 
-/*#crt {
-  background-image: url('../images/crt.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  pointer-events: none;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 3;
-  opacity: 0.9;
-}*/
+.job-points {
+  list-style-type: circle;
+  display:block;
+  padding-left: 1em;
+}
+
+.job-points li + li { /* Apply start margin between <li> */
+  margin-block-start: 0.7em;
+}
+
+.job-points li::marker {
+  color: var(--text-faded);
+}
 
 /* Typography */
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Pixel NES', sans-serif;
-  font-weight: 100;
-  margin: 0;
-  line-height:1;
-}
-
-h1 {
-  font-size: 3em;
-  line-height: 1;
-  text-transform: uppercase;
-  overflow: visible;
-}
-
-h2, h3, h4, h5, h6 {
-  font-size:1.2em;
-  margin-block: 1em;
-}
-
-/*.about {};*/
 
 .date::before {
   content: '// ';
@@ -100,7 +88,7 @@ h2, h3, h4, h5, h6 {
   color: var(--text-title);
 }
 
-/*.p-title::after {}*/
+
 
 .p-subtitle::before {
   content: ' | ';
@@ -119,20 +107,77 @@ h2, h3, h4, h5, h6 {
   padding-top: 0.5em;
 }
 
-/*
-.description::before {
-  position: absolute;
-  left:0px;
-  color: var(--text-faded);
-  content:'·';
+a {
+  color: var(--text-title);
+  text-decoration: none;
 }
-*/
+
+a:hover {
+  color: var(--text-link-hover);
+}
+
+img:hover {
+  transform: scale(115%);
+}
+
+
+
+/* Headings and Titles */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pixel NES', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  line-height:1;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size:1.4em;
+}
+
+.visually-hidden { /* For H1 SEO */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px, 1px, 1px, 1px); /* support legacy browsers */
+  clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+h1 {
+  line-height: 1;
+  overflow: visible;
+}
+
+#tom-dawson, #front-end-developer {
+  width: 100%;
+}
+
+#tom-dawson { /* Size of title container */
+  height:40px;
+}
+
+#front-end-developer { /* Size of title container */
+  height: 40px;
+  letter-spacing: 2px;
+}
+
+#tom-dawson text { /* Positioning text inside container */
+  font-size: 1.44em;
+  transform: translateY(40px);
+}
+
+#front-end-developer text {
+  font-size: 0.71em;
+  transform: translateY(30px);
+}
 
 /* Page Structure */
-
-p:not(:last-child) {
-  padding-bottom:14px;
-}
 
 .container {
   padding: 0;
@@ -144,69 +189,55 @@ p:not(:last-child) {
   z-index: 2;
 }
 
-.container > * + * {
-  margin-block-start: 1.5rem;
-}
-
-
-.sub-container {
-  padding: 0px 10px;
+.indented {
+  margin: 0px 10px;
   position: relative;
   z-index: 2;
+}
+
+.indented > * + * { /* Add margin in between child elements */
+  margin-block-end: 1.5em;
+}
+
+.indented > :last-child { /* Add margin to last child element */
+  margin-block-end: 3em;
+}
+
+.indented > :nth-child(2) { /* Add margin below headings */
+  margin-block-start: 1em;
 }
 
 .flex-container {
   padding: 0;
-  margin: 0px 0px 0px -10px;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 10px 0px 0px -10px;
   padding-inline-start: 0px;
   width: calc(100% + 10px);
   position: relative;
   z-index: 2;
+  /* Flex */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: stretch;
 }
 
 .flex-container > li {
   list-style-type: none;
-  text-align: center;
   padding: 7px 10px 5px 10px;
   margin: 10px;
-  position: relative;
-  z-index: 2;
-}
-
-.primary-skill {
-  background-color: var(--text-title);
-  color: var(--background);
-}
-
-.secondary-skill {
-  background-color: var(--text-subtitle);
-  color: var(--background);
-}
-
-/*
-hr {
-  height: 2px;
-  margin: auto;
-  margin: 45px 0px 10px 0px;
-  padding:0px 15px 0px 15px;
-  border: none;
-  border-bottom: dashed 3px var(--text-title);
-}*/
-
-a {
-  color: var(--text-title);
-}
-
-a:hover, img:hover {
-  transform: scale(120%);
+  /* Flex */
+  text-align: center;
+  align-self: center;
+  /* These make the tiles stretch */
+  flex-grow: 1;
+  max-width: 34%;
 }
 
 /* Header styles */
+
 header.container {
   padding-top:20px;
-  margin-top:30px;
 }
 
 nav /* #navbar */ {
@@ -218,10 +249,11 @@ nav /* #navbar */ {
   z-index: 10;
   padding: 15px 0px 15px 0px;
   border-bottom: solid 1px var(--text-title); /* Perf. line border */
+  margin-bottom: 2em;
 }
 
 .nav-left {
-  width: 50%;  
+  width: 50%;
 }
 
 .nav-right {
@@ -229,23 +261,12 @@ nav /* #navbar */ {
   margin-left: auto;
 }
 
-.sticky {
-  backdrop-filter: blur(5px);
-  background-color: var(--nav-background);
-}
-
-nav a {
-  font-size:1em;
-}
-
 nav #toggle-container {
   justify-content: flex-end;
   display: flex;
 }
 
-a {
-  text-decoration: none;
-}
+/* Header Links */
 
 .email-address {
   display: flex;
@@ -259,16 +280,56 @@ a {
   width: auto;
 }
 
-/* Social Links */
 .social-icon {
   float: left;
   height: auto;
-  width: 25px;
-  margin-right: 5px;
+  margin-right: 15px;
 }
-/* Remove selection highlight */
-.social-icon::selection {
-  background: none;
+
+.social-icon, .toggle-icon {
+  width: 25px;
+  position: relative;
+  top:2px;
+}
+
+/* Header + Footer Sticking */
+
+.sticky {
+  backdrop-filter: blur(5px);
+  background-color: var(--nav-background);
+}
+
+/* Footer */
+
+footer p { /* Normalize default styles */
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+#footer-global {
+  font-family: 'Pixel NES', sans-serif;
+  font-size: 0.9rem;
+  padding: 5px 0px 5px 0px;
+  border-top: solid 1px var(--text-title); /* Perf. line border */
+  position: sticky;
+  bottom: -1px; /* -1px is important for JS to apply .sticky class to nav */
+}
+
+.copyright {
+  font-size: 1rem;
+}
+
+.obviously {
+  color: var(--text-title);
+  font-size: 0.5rem;
+  font-style: italic;
+  font-weight: 100;
+}
+
+/* Selection/Highlighting */
+
+.social-icon::selection, svg text::selection {
+  background: none; /* Remove selection highlight */
 }
 
 ::selection {
@@ -283,21 +344,6 @@ a {
   text-shadow: none;
 }
 
-/* Footer */
-footer.container {
-  padding-bottom:20px;
-  font-family: 'Pixel NES', sans-serif;
-  font-size: 0.9rem;
-  margin-bottom:20px;
-}
-
-.obviously {
-  color: var(--text-title);
-  font-size: 0.6rem;
-  font-style: italic;
-  font-weight: 100;
-}
-
 /* Scrollbar */
 
 ::-webkit-scrollbar { 
@@ -310,7 +356,20 @@ footer.container {
   transition: all 0.3s; 
 }
 
+/* Skill Boxes */
+
+.primary-skill {
+  background-color: var(--text-title);
+  color: var(--background);
+}
+
+.secondary-skill {
+  background-color: var(--text-subtitle);
+  color: var(--background);
+}
+
 /* Button styling */
+
 button,
 [type="button"],
 [type="reset"],
@@ -330,7 +389,7 @@ button,
 .pixel-button {
   cursor: pointer;
   display: block;
-  padding: 7px 10px;
+  padding: 2px 5px;
   margin-right: 5px;
   color: var(--background);
   background-color: var(--text-body);
@@ -351,31 +410,6 @@ button,
                   5px 0 0 0 var(--text-title),
                   0 -5px 0 0 var(--text-title),
                   0 5px 0 0 var(--text-title);
-}
-
-.visually-hidden { 
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px; 
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
-  clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
-  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-}
-
-/* Size of title container */
-#tom-dawson {
-  width:100%;
-  height:40px;
-}
-
-/* Positioning text inside container */
-#tom-dawson text {
-  transform: translateY(38px);
 }
 
 /* Mobile breakpoint */
