@@ -1,11 +1,11 @@
 /* Theming and Structure */
 
 html[data-theme='light'] {
-  --background: #D1D5D4;
-  --nav-background: #d1d5d4a4;
-  --text-body: #0B1014;
-  --text-link: #009BC6;
-  --text-link-hover: #009BC6;
+  --background: #D1D5D4; /* OK */
+  --nav-background: #d1d5d4a4; /* OK */
+  --text-body: #0B1014; /* OK */
+  --text-link: #0092bb; /* OK */
+  --text-link-hover: #0092bb;
   --text-faded: #49789e;
   --text-title: #009BC6;
   --text-subtitle: #BA5C12;
@@ -15,12 +15,15 @@ html[data-theme='light'] {
 }
 
 html[data-theme='dark'] {
-  --background: #1B1B26;
-  --nav-background: #1b1b26ad;
-  --text-body: #E3E3DD;
-  --text-link: #AA9FFF;
-  --text-link-hover: #AA9FFF;
-  --text-faded: #435260;
+  --background: #1B1B26; /* OK */
+  --nav-background: #1b1b26ad; /* OK */
+  --text-body: #E3E3DD; /* OK */
+  --text-faded: #435260; /* OK */
+  
+  --primary-color: #AA9FFF; /* OK */
+  --text-link: #AA9FFF; 
+  --text-link-hover: #6d65aa; /* OK */
+
   --text-title: #AA9FFF;
   --text-subtitle: #F5D324;
   /* Heading Animation */
@@ -29,8 +32,9 @@ html[data-theme='dark'] {
 }
 
 body {
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-size: 1.1em;
+  font-family: 'JetBrains Mono', sans-serif;
+  font-size: 1em;
+  letter-spacing: -0.5px;
   color: var(--text-body);
   background-color: var(--background);
   text-align: left;
@@ -91,14 +95,19 @@ p {
 
 
 .p-subtitle::before {
-  content: ' | ';
-  font-size: 1.2em;
+  content: ' = ';
+  font-size: 1em;
   color: var(--text-subtitle);
 }
 
 .p-subtitle {
   color: var(--text-body);
   font-weight: 100;
+}
+
+.p-subtitle::after {
+  content: '()';
+  color: var(--text-subtitle);
 }
 
 .description {
