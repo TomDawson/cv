@@ -151,7 +151,7 @@ a:hover {
   color: var(--text-link-hover);
 }
 
-img:hover {
+nav img:hover {
   transform: scale(115%);
 }
 
@@ -276,12 +276,12 @@ h1 {
   color: var(--text-subtitle);
 }
 
-.primary-skill {
+.programming-skill {
   background-color: var(--text-title);
   color: var(--background);
 }
 
-.secondary-skill {
+.it-skill {
   background-color: var(--text-subtitle);
   color: var(--background);
 }
@@ -522,8 +522,8 @@ hr,
 img,
 a,
 .container,
-.primary-skill,
-.secondary-skill,
+.programming-skill,
+.it-skill,
 .pixel-button,
 #tom-dawson,
 #front-end-developer,
@@ -539,7 +539,7 @@ a,
 
 .flex-container > *:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 3px 0px 0px rgb(126, 126, 126);
+  box-shadow: 0px 3px 0px 0px var(--text-body);
 }
 
 body {
@@ -579,3 +579,34 @@ body {
     stroke-width: 0.5;
   }
 }
+
+/* Portfolio */
+
+.portfolio-entry {
+
+}
+
+.portfolio-summary-wrapper {
+
+}
+
+.portfolio-image-wrapper {
+  height: 300px;
+  overflow: hidden;
+}
+
+.portfolio-image-wrapper img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: all 11s ease-in-out;
+  border-radius: 3px;
+  
+}
+
+.portfolio-image-wrapper:hover img, .portfolio-image-wrapper:active img {
+  object-position: bottom center;
+}
+
+/*box-shadow: inset 7px 7px 5px 0px rgba(0,0,0,0.1);*/
