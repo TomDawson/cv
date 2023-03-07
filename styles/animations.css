@@ -44,14 +44,14 @@ body {
 /* Heading Animation */
 
 #tom-dawson { /* SVG element */
-  animation: stroke 4s;
+  animation: stroke 2s;
   fill: var(--stroke);
   stroke: var(--stroke);
   stroke-width: 0.5px;
 }
 
 #front-end-developer {
-  animation: stroke 5s;
+  animation: stroke 3s;
   fill: var(--stroke-2);
   stroke: var(--stroke-2);
   stroke-width: 0.5px;
