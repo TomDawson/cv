@@ -1,3 +1,29 @@
+/* Fonts */
+
+@font-face { /* JetBrains */
+  font-display: swap;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/jetbrains-mono-v13-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/jetbrains-mono-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/jetbrains-mono-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/jetbrains-mono-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/jetbrains-mono-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono') format('svg'); /* Legacy iOS */
+}
+
+@font-face { /* Pixel NES */
+  font-display: swap;
+  font-family: 'Pixel NES';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/Pixel_NES.eot?') format('eot'),
+       url('../fonts/Pixel_NES.woff') format('woff'),
+       url('../fonts/Pixel_NES.ttf') format('truetype'),
+       url('../fonts/Pixel_NES.svg#PixelNES') format('svg');
+}
+
 /* Theming and Structure */
 
 html[data-theme='light'] {
@@ -220,24 +246,6 @@ h1 {
 
 /* Skill Boxes */
 
-.primary-skill {
-  background-color: var(--text-title);
-  color: var(--background);
-}
-
-.secondary-skill {
-  background-color: var(--text-subtitle);
-  color: var(--background);
-}
-
-.skill-key.developer::before {
-  color: var(--primary-color);
-}
-
-.skill-key.it::before {
-  color: var(--text-subtitle);
-}
-
 .flex-key {
   display: flex;
   flex-direction: row;
@@ -253,7 +261,29 @@ h1 {
 }
 
 .skill-key {
-  margin-right: 40px;
+  color: var(--text-faded);
+}
+
+.flex-key :not(:last-child) {
+  padding-right: 20px;
+}
+
+.skill-key.developer::before {
+  color: var(--primary-color);
+}
+
+.skill-key.it::before {
+  color: var(--text-subtitle);
+}
+
+.primary-skill {
+  background-color: var(--text-title);
+  color: var(--background);
+}
+
+.secondary-skill {
+  background-color: var(--text-subtitle);
+  color: var(--background);
 }
 
 .flex-container {
@@ -465,5 +495,87 @@ button,
 
   main.container {
     
+  }
+}
+
+
+/* Animations */
+
+/* scripts.js removes this class on page load */
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Transitions */
+
+nav,
+hr,
+img,
+a,
+.container,
+.primary-skill,
+.secondary-skill,
+.pixel-button,
+#tom-dawson,
+#front-end-developer,
+.p-subtitle,
+.p-subtitle::before,
+.p-title {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.flex-container > *:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 3px 0px 0px rgb(126, 126, 126);
+}
+
+body {
+  transition: background 0.3s;
+}
+
+/* Heading Animation */
+
+#tom-dawson { /* SVG element */
+  animation: stroke 2s;
+  fill: var(--stroke);
+  stroke: var(--stroke);
+  stroke-width: 0.5px;
+}
+
+#front-end-developer {
+  animation: stroke 3s;
+  fill: var(--stroke-2);
+  stroke: var(--stroke-2);
+  stroke-width: 0.5px;
+}
+
+@keyframes stroke {
+  0% {
+    fill: transparent;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%; /* No stroke whatsoever */
+    stroke-width: 0.5;
+  }
+  70% {
+    fill: transparent;
+    stroke-width: 0.5;
+  }
+  100% {
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0; /* Unbroken stroke */
+    stroke-width: 0.5;
   }
 }
