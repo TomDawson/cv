@@ -101,6 +101,15 @@ p {
 
 /* Typography */
 
+#intro {
+  text-align: justify;
+}
+
+#intro em {
+  font-style: normal;
+  color: var(--primary-color);
+}
+
 .date::before {
   content: '// ';
 }
@@ -169,6 +178,16 @@ h1, h2, h3, h4, h5, h6 {
 h2, h3, h4, h5, h6 {
   font-size:1.4em;
 }
+
+h2::after, h3::after, h4::after, h5::after, h6::after {
+  font-family: 'Pixel NES', sans-serif;
+  font-size: 1.4em;
+  content: ':';
+  color: var(--text-subtitle);
+  padding-left: 4px;
+  position: relative;
+  bottom: 1px;
+} 
 
 .visually-hidden { /* For H1 SEO */
   border: 0;
@@ -330,7 +349,7 @@ nav /* #navbar */ {
   top: -1px; /* -1px is important for JS to apply .sticky class to nav */
   z-index: 10;
   padding: 15px 0px 15px 0px;
-  border-bottom: solid 1px var(--text-title); /* Perf. line border */
+  border-bottom: dashed 2px var(--text-title); /* Perf. line border */
   margin-bottom: 2em;
 }
 
@@ -390,9 +409,10 @@ footer p { /* Normalize default styles */
 
 #footer-global {
   font-family: 'Pixel NES', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
   padding: 5px 0px 5px 0px;
-  border-top: solid 1px var(--text-title); /* Perf. line border */
+  border-top: dashed 2px var(--text-title); /* Perf. line border */
   position: sticky;
   bottom: -1px; /* -1px is important for JS to apply .sticky class to nav */
 }
@@ -402,7 +422,7 @@ footer p { /* Normalize default styles */
 }
 
 .obviously {
-  color: var(--text-title);
+  color: var(--text-faded);
   font-size: 0.5rem;
   font-style: italic;
   font-weight: 100;
