@@ -48,6 +48,7 @@ html[data-theme='dark'] {
   
   --primary-color: #AA9FFF; /* OK */
   --text-link: #AA9FFF; 
+
   --text-link-hover: #6d65aa; /* OK */
 
   --text-title: #AA9FFF;
@@ -127,8 +128,6 @@ p {
   color: var(--text-title);
 }
 
-
-
 .p-subtitle::before {
   content: ' — ';
   font-size: 1em;
@@ -153,7 +152,7 @@ p {
 
 a {
   color: var(--text-title);
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 a:hover {
@@ -339,6 +338,14 @@ h1 {
 
 header.container {
   padding-top:30px;
+}
+
+#portrait {
+  border-radius: 100%;
+  max-width: 150px;
+  position: absolute;
+  right: 0px;
+  top: 15px;
 }
 
 nav /* #navbar */ {
