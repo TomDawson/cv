@@ -353,20 +353,14 @@ nav /* #navbar */ {
   padding-top: 5px;
 }
 
-.social-icon-container {
-  height: 100%;
-  width: auto;
-}
-
-.social-icon {
-  float: left;
-  height: auto;
-}
-
 .social-icon, .toggle-icon {
   width: 25px;
-  position: relative;
-  top:2px;
+}
+
+.social-icon-container {
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Header + Footer Sticking */
