@@ -159,7 +159,7 @@ a:hover {
   color: var(--text-link-hover);
 }
 
-nav img:hover {
+nav .social-icon:hover {
   transform: scale(115%);
 }
 
@@ -349,7 +349,13 @@ header.container {
   max-height: 220px;
   position: absolute;
   right: 0px;
-  top: 30px;
+  bottom: 25px;
+}
+
+.sticky #portrait {
+  bottom: -30px;
+  right: -10px;
+  transform: rotate(-20deg);
 }
 
 nav /* #navbar */ {
