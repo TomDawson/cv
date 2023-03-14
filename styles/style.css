@@ -27,42 +27,30 @@
 /* Theming and Structure */
 
 html[data-theme='light'] {
-  --background: #D1D5D4; /* OK */
-  --nav-background: #d1d5d4a4; /* OK */
-  --text-body: #0B1014; /* OK */
-  --text-link: #0092bb; /* OK */
-  --text-link-hover: #0092bb;
-  --text-faded: #49789e;
-  --text-title: #009BC6;
-  --text-subtitle: #BA5C12;
-  /* Heading Animation */
-  --stroke: #009BC6;
-  --stroke-2: #0B1014;;
+  --background: #ece9d8;
+  --nav-background: #ece9d8a4;
+  --body: #1B1B26;
+  --faded: #b9b7ac;
+  --primary: #1847ca;
+  --secondary: #ec7c21;
 }
 
 html[data-theme='dark'] {
-  --background: #1B1B26; /* OK */
-  --nav-background: #1b1b26ad; /* OK */
-  --text-body: #E3E3DD; /* OK */
-  --text-faded: #435260; /* OK */
-  
-  --primary-color: #AA9FFF; /* OK */
-  --text-link: #AA9FFF; 
-
-  --text-link-hover: #6d65aa; /* OK */
-
-  --text-title: #AA9FFF;
-  --text-subtitle: #F5D324;
-  /* Heading Animation */
-  --stroke: #AA9FFF;
-  --stroke-2: #E3E3DD;;
+  --background: #1B1B26;
+  --nav-background: #1b1b26ad;
+  --body: #e0e5f1;
+  --faded: #4f4f6b;
+  --primary: #AA9FFF;
+  --secondary: #F5D324;
 }
+
+
 
 body {
   font-family: 'JetBrains Mono', sans-serif;
   font-size: 1em;
   letter-spacing: -0.5px;
-  color: var(--text-body);
+  color: var(--body);
   background-color: var(--background);
   text-align: left;
   text-rendering: optimizeSpeed;
@@ -86,7 +74,7 @@ p {
 }
 
 .job-points {
-  list-style-type: circle;
+  list-style-type: disc;
   display:block;
   padding-left: 1em;
 }
@@ -96,7 +84,7 @@ p {
 }
 
 .job-points li::marker {
-  color: var(--text-faded);
+  color: var(--faded);
 }
 
 /* Typography */
@@ -107,40 +95,25 @@ p {
 
 #intro em {
   font-style: normal;
-  color: var(--primary-color);
-}
-
-.date::before {
-  content: '// ';
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .date {
-  color: var(--text-faded);
+  color: var(--faded);
   display: block;
   padding-bottom: 0.5em;
   font-size: 1em;
-  font-style:normal;
+  font-style: italic;
 }
 
 .p-title {
   padding-bottom: 0.5em;
-  color: var(--text-title);
-}
-
-.p-subtitle::before {
-  content: ' — ';
-  font-size: 1em;
-  color: var(--text-subtitle);
+  color: var(--primary);
 }
 
 .p-subtitle {
-  color: var(--text-body);
-  font-weight: 100;
-}
-
-.p-subtitle::after {
-  content: '.';
-  color: var(--text-subtitle);
+  color: var(--secondary);
 }
 
 .description {
@@ -150,19 +123,40 @@ p {
 }
 
 a {
-  color: var(--text-title);
+  color: var(--primary);
   /* text-decoration: none; */
 }
 
 a:hover {
-  color: var(--text-link-hover);
+  opacity: 0.5;
 }
 
 nav .social-icon:hover {
   transform: scale(115%);
 }
 
+/* Typography Before/After Embellishments */
 
+.date::before {
+  content: '// ';
+  color: var(--faded);
+}
+
+.p-title::after {
+  content: ' = ';
+  color: var(--faded);
+}
+
+.p-subtitle::after {
+  content: '() {';
+  color: var(--faded);
+}
+
+.section-entry::after {
+  content: '}';
+  color: var(--faded);
+  display: block;
+}
 
 /* Headings and Titles */
 
@@ -176,16 +170,6 @@ h1, h2, h3, h4, h5, h6 {
 h2, h3, h4, h5, h6 {
   font-size:1.4em;
 }
-
-h2::after, h3::after, h4::after, h5::after, h6::after {
-  font-family: 'Pixel NES', sans-serif;
-  font-size: 1.4em;
-  content: ':';
-  color: var(--text-subtitle);
-  padding-left: 4px;
-  position: relative;
-  bottom: 1px;
-} 
 
 .visually-hidden { /* For H1 SEO */
   border: 0;
@@ -278,7 +262,7 @@ h1 {
 }
 
 .skill-key {
-  color: var(--text-faded);
+  color: var(--faded);
 }
 
 .flex-key :not(:last-child) {
@@ -286,20 +270,20 @@ h1 {
 }
 
 .skill-key.developer::before {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .skill-key.it::before {
-  color: var(--text-subtitle);
+  color: var(--secondary);
 }
 
 .programming-skill {
-  background-color: var(--text-title);
+  background-color: var(--primary);
   color: var(--background);
 }
 
 .it-skill {
-  background-color: var(--text-subtitle);
+  background-color: var(--secondary);
   color: var(--background);
 }
 
@@ -352,14 +336,6 @@ header.container {
   overflow-clip-margin: unset;
 }
 
-.sticky #portrait {
-  -moz-transform: rotate(-20deg) translateY(50px);
-  -webkit-transform: rotate(-20deg) translateY(50px);
-  -o-transform: rotate(-20deg) translateY(50px);
-  -ms-transform: rotate(-20deg) translateY(50px);
-  transform: rotate(-20deg) translateY(50px);
-}
-
 nav /* #navbar */ {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -369,7 +345,7 @@ nav /* #navbar */ {
   top: -1px; /* -1px is important for JS to apply .sticky class to nav */
   z-index: 10;
   padding: 15px 0px 15px 0px;
-  border-bottom: dashed 2px var(--text-title); /* Perf. line border */
+  border-bottom: dashed 2px var(--primary); /* Perf. line border */
   margin-bottom: 2em;
   gap: 10px;
 }
@@ -419,20 +395,16 @@ footer p { /* Normalize default styles */
 
 #footer-global {
   font-family: 'Pixel NES', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.3px;
   padding: 5px 0px 5px 0px;
-  border-top: dashed 2px var(--text-title); /* Perf. line border */
+  border-top: dashed 2px var(--primary); /* Perf. line border */
   /* position: sticky;
   bottom: -1px; /* -1px is important for JS to apply .sticky class to nav */
 }
 
-.copyright {
-  font-size: 1rem;
-}
-
 .obviously {
-  color: var(--text-faded);
+  color: var(--faded);
   font-size: 0.5rem;
   font-style: italic;
   font-weight: 100;
@@ -445,13 +417,13 @@ footer p { /* Normalize default styles */
 }
 
 ::selection {
-  background: var(--text-body);
+  background: var(--body);
   color: var(--background);
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: var(--text-body);
+  background: var(--body);
   color: var(--background);
   text-shadow: none;
 }
@@ -464,7 +436,7 @@ footer p { /* Normalize default styles */
 }
 
 ::-webkit-scrollbar-thumb { 
-  background: var(--text-title); /* Foreground */
+  background: var(--primary); /* Foreground */
   transition: all 0.3s; 
 }
 
@@ -492,54 +464,18 @@ button,
   display: block;
   padding: 7px 5px;
   color: var(--background);
-  background-color: var(--text-body);
+  background-color: var(--primary);
   border-radius: 5px;
   min-width: 140px;
 }
 
 .toggle-button:active {
-    transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .toggle-button:hover {
-  background-color: var(--text-title);
+  opacity: 0.7;
 }
-
-/* Mobile breakpoint */
-
-@media only screen and (max-width: 480px) {
-  #tom-dawson text {
-    font-size:1.15em; 
-  }
-  
-  #front-end-developer text {
-    font-size: 0.55em;
-  }
-
-  .break {
-    display: flex;
-    margin-bottom: -5px;
-    flex-basis: 100%;
-    flex-grow: 1;
-    gap: 0;
-  }
-
-  .email-address {
-    padding-top: 0px;
-  }
-
-  #portrait, .sticky #portrait {
-    max-height: 110px;
-    right: 0px;
-    bottom: -20px;
-    transform: none;
-  }
-
-  main.container {
-    
-  }
-}
-
 
 /* Animations */
 
@@ -579,29 +515,37 @@ a,
   transition: all 0.3s;
 }
 
-.flex-container > *:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 3px 0px 0px var(--text-body);
-}
-
 body {
   transition: background 0.3s;
+}
+
+.flex-container > *:hover {
+  transform: translateY(-3px);
+  transition-duration: 0.05s;
 }
 
 /* Heading Animation */
 
 #tom-dawson { /* SVG element */
-  animation: stroke 2s;
-  fill: var(--stroke);
-  stroke: var(--stroke);
+  animation: stroke 1.5s;
+  fill: var(--primary);
+  stroke: var(--primary);
   stroke-width: 0.5px;
 }
 
 #front-end-developer {
-  animation: stroke 3s;
-  fill: var(--stroke-2);
-  stroke: var(--stroke-2);
+  animation: stroke 2s;
+  fill: var(--secondary);
+  stroke: var(--secondary);
   stroke-width: 0.5px;
+}
+
+.sticky #portrait {
+  -moz-transform: rotate(-20deg) translateY(50px);
+  -webkit-transform: rotate(-20deg) translateY(50px);
+  -o-transform: rotate(-20deg) translateY(50px);
+  -ms-transform: rotate(-20deg) translateY(50px);
+  transform: rotate(-20deg) translateY(50px);
 }
 
 @keyframes stroke {
@@ -651,4 +595,42 @@ body {
   object-position: bottom center;
 }
 
-/*box-shadow: inset 7px 7px 5px 0px rgba(0,0,0,0.1);*/
+/* Mobile breakpoint */
+
+@media only screen and (max-width: 480px) {
+  #tom-dawson text {
+    font-size:1.15em; 
+  }
+  
+  #front-end-developer text {
+    font-size: 0.55em;
+  }
+
+  .break {
+    display: flex;
+    margin-bottom: -5px;
+    flex-basis: 100%;
+    flex-grow: 1;
+    gap: 0;
+  }
+
+  .email-address {
+    padding-top: 0px;
+  }
+
+  .p-subtitle {
+    display: block;
+    padding-top: 5px;
+  }
+
+  #portrait, .sticky #portrait {
+    max-height: 110px;
+    right: 0px;
+    bottom: -20px;
+    -moz-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}

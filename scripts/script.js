@@ -7,6 +7,7 @@ window.onload = function() {
 
 
 //// Theme Swapping
+const portrait = document.getElementById('portrait');
 const themeToggle = document.getElementById('theme-toggle');
 const darkModeSpan = document.getElementById('dark-mode-span');
 const lightModeSpan = document.getElementById('light-mode-span');
@@ -26,6 +27,7 @@ themeToggle.onclick = function() {
         targetTheme = 'dark';
         lightModeSpan.style.display = 'none';
         darkModeSpan.style.display = 'block';
+        portrait.src = 'images/tom-head-dark.png';
         // Loop through array of social icons to invert them
         for(var i=0; i < socialIcons.length; i++) {
             socialIcons[i].style.filter = 'invert(100%)';
@@ -34,6 +36,7 @@ themeToggle.onclick = function() {
         targetTheme = 'light';
         darkModeSpan.style.display = 'none';
         lightModeSpan.style.display = 'block';
+        portrait.src = 'images/tom-head-light.png';
         // Loop through socials array to unset filter
         for(var i=0; i < socialIcons.length; i++) {
             socialIcons[i].style.filter = 'unset';
@@ -50,12 +53,14 @@ function refreshThemeToggle() {
         if (storedTheme === 'dark') {
             darkModeSpan.style.display = 'block';
             lightModeSpan.style.display = 'none';
+            portrait.src = 'images/tom-head-dark.png';
             for(var i=0; i < socialIcons.length; i++) {
                 socialIcons[i].style.filter = 'invert(100%)';
             }
         } else {
             lightModeSpan.style.display = 'block';
             darkModeSpan.style.display = 'none';
+            portrait.src = 'images/tom-head-light.png';
         }
     }
 };
