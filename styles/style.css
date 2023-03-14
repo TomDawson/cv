@@ -348,12 +348,16 @@ header.container {
   position: absolute;
   right: 0px;
   bottom: 25px;
+  overflow: visible;
+  overflow-clip-margin: unset;
 }
 
 .sticky #portrait {
-  bottom: -25px;
-  right: -10px;
-  transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg) translateY(50px);
+  -webkit-transform: rotate(-20deg) translateY(50px);
+  -o-transform: rotate(-20deg) translateY(50px);
+  -ms-transform: rotate(-20deg) translateY(50px);
+  transform: rotate(-20deg) translateY(50px);
 }
 
 nav /* #navbar */ {
@@ -528,7 +532,7 @@ button,
     max-height: 110px;
     right: 0px;
     bottom: -20px;
-    transform: rotate(0deg);
+    transform: none;
   }
 
   main.container {
