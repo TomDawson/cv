@@ -73,18 +73,19 @@ p {
   z-index: 1;
 }
 
-.job-points {
-  list-style-type: disc;
+.entry-points {
+  list-style-type: none;
   display:block;
   padding-left: 1em;
 }
 
-.job-points li + li { /* Apply start margin between <li> */
+.entry-points li + li { /* Apply start margin between <li> */
   margin-block-start: 0.7em;
 }
 
-.job-points li::marker {
+.entry-points li::marker {
   color: var(--faded);
+  content: '· ';
 }
 
 /* Typography */
@@ -114,12 +115,6 @@ p {
 
 .p-subtitle {
   color: var(--secondary);
-}
-
-.description {
-  display:block;
-  padding-left: 1em;
-  padding-top: 0.5em;
 }
 
 a {
@@ -261,19 +256,15 @@ h1 {
   font-size: 1em;
 }
 
-.skill-key {
-  color: var(--faded);
-}
-
 .flex-key :not(:last-child) {
   padding-right: 20px;
 }
 
-.skill-key.developer::before {
+.skill-key.developer {
   color: var(--primary);
 }
 
-.skill-key.it::before {
+.skill-key.it {
   color: var(--secondary);
 }
 
@@ -332,8 +323,7 @@ header.container {
   position: absolute;
   right: 0px;
   bottom: 25px;
-  overflow: visible;
-  overflow-clip-margin: unset;
+  overflow-clip-margin: unset;   /* This stops face img from causing shift in nav when scrolling on mobile */
 }
 
 nav /* #navbar */ {
@@ -412,7 +402,7 @@ footer p { /* Normalize default styles */
 
 /* Selection/Highlighting */
 
-.social-icon::selection, svg text::selection {
+.social-icon::selection, svg text::selection, #portrait::selection, #theme-toggle span::selection {
   background: none; /* Remove selection highlight */
 }
 
@@ -465,16 +455,13 @@ button,
   padding: 7px 5px;
   color: var(--background);
   background-color: var(--primary);
-  border-radius: 5px;
+  border-radius: 10px;
   min-width: 140px;
 }
 
 .toggle-button:active {
   transform: translateY(2px);
-}
-
-.toggle-button:hover {
-  opacity: 0.7;
+  transition-duration: 0.1s;
 }
 
 /* Animations */
@@ -633,4 +620,14 @@ body {
     -ms-transform: none;
     transform: none;
   }
+
+  header.container {
+    padding-top: 10px;
+  }
+
+  .toggle-button:hover {
+    opacity: 1;
+  }
+
+/* ^ Mobile Styles ^ */
 }
