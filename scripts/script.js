@@ -62,9 +62,10 @@ function refreshThemeToggle() {
 
 refreshThemeToggle();
 
-//// Monitor when #navbar changes in visibility and if it triggers CSS position: sticky;, apply class .sticky to allow styling.
+//// Monitor when #navbar changes in visibility and if it triggers CSS position: sticky;, apply class .sticky to allow styling.  Footer is disabled.
+
 const navbar = document.getElementById("navbar");
-const footer = document.getElementById("footer-global");
+//const footer = document.getElementById("footer-global");
 
 const stickyObserver = new IntersectionObserver( 
     ([e]) => e.target.classList.toggle("sticky", e.intersectionRatio < 1),
@@ -72,4 +73,4 @@ const stickyObserver = new IntersectionObserver(
     );
 
 stickyObserver.observe(navbar);
-stickyObserver.observe(footer);
+//stickyObserver.observe(footer);

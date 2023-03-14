@@ -80,7 +80,6 @@ p {
   min-height: 100vh; /* container always  */
   flex-direction: column; /* containers flex vertically */
   justify-content: center; /* centered vertically */
-  gap:0px; /* no spacing between containers */
   pointer-events: auto;
   position: relative;
   z-index: 1;
@@ -103,7 +102,7 @@ p {
 /* Typography */
 
 #intro {
-  text-align: justify;
+  text-align: left;
 }
 
 #intro em {
@@ -345,7 +344,6 @@ header.container {
 }
 
 #portrait {
-  border-radius: 100%;
   max-height: 220px;
   position: absolute;
   right: 0px;
@@ -353,7 +351,7 @@ header.container {
 }
 
 .sticky #portrait {
-  bottom: -30px;
+  bottom: -25px;
   right: -10px;
   transform: rotate(-20deg);
 }
@@ -362,15 +360,21 @@ nav /* #navbar */ {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   position: sticky;
   top: -1px; /* -1px is important for JS to apply .sticky class to nav */
   z-index: 10;
   padding: 15px 0px 15px 0px;
   border-bottom: dashed 2px var(--text-title); /* Perf. line border */
   margin-bottom: 2em;
+  gap: 10px;
 }
 
 /* Header Links */
+
+.break {
+  display: none;
+}
 
 .email-address {
   display: flex;
@@ -387,7 +391,6 @@ nav /* #navbar */ {
 .social-icon {
   float: left;
   height: auto;
-  margin-right: 15px;
 }
 
 .social-icon, .toggle-icon {
@@ -416,7 +419,7 @@ footer p { /* Normalize default styles */
   letter-spacing: 0.3px;
   padding: 5px 0px 5px 0px;
   border-top: dashed 2px var(--text-title); /* Perf. line border */
-  position: sticky;
+  /* position: sticky;
   bottom: -1px; /* -1px is important for JS to apply .sticky class to nav */
 }
 
@@ -469,7 +472,7 @@ button,
 [type="submit"] {
     overflow: visible;
     font-family: 'Pixel NES', sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.15;
     margin: 0;
     text-transform: none;
@@ -478,12 +481,12 @@ button,
     border-width:0px;
 }
 
-/* Pixel Button */
+/* Theme Toggle */
+
 .toggle-button {
   cursor: pointer;
   display: block;
-  padding: 5px 5px;
-  margin-right: 15px;
+  padding: 7px 5px;
   color: var(--background);
   background-color: var(--text-body);
   border-radius: 5px;
@@ -502,11 +505,35 @@ button,
 
 @media only screen and (max-width: 480px) {
   #tom-dawson text {
-    font-size:1.1em; 
+    font-size:1.15em; 
   }
   
   #front-end-developer text {
-    font-size: 0.5em;
+    font-size: 0.55em;
+  }
+
+  .break {
+    display: flex;
+    margin-bottom: -5px;
+    flex-basis: 100%;
+    flex-grow: 1;
+    gap: 0;
+  }
+
+  .email-address {
+    padding-top: 0px;
+  }
+
+  #portrait {
+    max-height: 75px;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .sticky #portrait {
+    bottom: 0px;
+    right: 0px;
+    transform: rotate(-20deg);
   }
 
   main.container {
