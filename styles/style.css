@@ -524,16 +524,11 @@ button,
     padding-top: 0px;
   }
 
-  #portrait {
-    max-height: 75px;
+  #portrait, .sticky #portrait {
+    max-height: 110px;
     right: 0px;
-    bottom: 0px;
-  }
-
-  .sticky #portrait {
-    bottom: 0px;
-    right: 0px;
-    transform: rotate(-20deg);
+    bottom: -20px;
+    transform: rotate(0deg);
   }
 
   main.container {
