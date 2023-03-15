@@ -27,12 +27,12 @@
 /* Theming and Structure */
 
 html[data-theme='light'] {
-  --background: #ece9d8;
-  --nav-background: #ece9d8a4;
+  --background: #e0e5f1;
+  --nav-background: #e0e5f1a4;
   --body: #1B1B26;
-  --faded: #b9b7ac;
-  --primary: #1847ca;
-  --secondary: #ec7c21;
+  --faded: #9fa6b6;
+  --primary: #6b98c9;
+  --secondary: #C69232;
 }
 
 html[data-theme='dark'] {
@@ -126,10 +126,6 @@ a:hover {
   opacity: 0.5;
 }
 
-nav .social-icon:hover {
-  transform: scale(115%);
-}
-
 /* Typography Before/After Embellishments */
 
 .date::before {
@@ -216,14 +212,10 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-  position: relative;
-  z-index: 2;
 }
 
 .indented {
   margin: 0px 10px;
-  position: relative;
-  z-index: 2;
 }
 
 .indented > * + * { /* Add margin in between child elements */
@@ -283,8 +275,6 @@ h1 {
   margin: 10px 0px 0px -5px;
   padding-inline-start: 0px;
   width: calc(100% + 10px);
-  position: relative;
-  z-index: 2;
   /* Flex */
   display: flex;
   flex-direction: row;
@@ -305,13 +295,15 @@ h1 {
   justify-content: center;
   /* These make the tiles stretch */
   flex-grow: 1;
-  max-width: auto;
+  width: auto;
 }
 
 /* Header styles */
 
 header {
   display: flex;
+  position: relative;
+  z-index: 3;
 }
 
 header.container {
@@ -323,7 +315,7 @@ header.container {
   position: absolute;
   right: 0px;
   bottom: 25px;
-  overflow-clip-margin: unset;   /* This stops face img from causing shift in nav when scrolling on mobile */
+  overflow-clip-margin: initial;   /* This stops face img from causing shift in nav when scrolling on mobile */
 }
 
 nav /* #navbar */ {
@@ -333,11 +325,13 @@ nav /* #navbar */ {
   flex-wrap: wrap;
   position: sticky;
   top: -1px; /* -1px is important for JS to apply .sticky class to nav */
-  z-index: 10;
+  z-index: 2;
   padding: 15px 0px 15px 0px;
   border-bottom: dashed 2px var(--primary); /* Perf. line border */
   margin-bottom: 2em;
   gap: 10px;
+  backdrop-filter: blur(5px);
+  background-color: var(--nav-background);
 }
 
 /* Header Links */
@@ -365,10 +359,7 @@ nav /* #navbar */ {
 
 /* Header + Footer Sticking */
 
-.sticky {
-  backdrop-filter: blur(5px);
-  background-color: var(--nav-background);
-}
+
 
 /* Footer */
 
@@ -450,7 +441,7 @@ button,
   color: var(--background);
   background-color: var(--primary);
   border-radius: 10px;
-  min-width: 140px;
+  min-width: 80px;
 }
 
 .toggle-button:active {
@@ -605,14 +596,21 @@ body {
   }
 
   #portrait, .sticky #portrait {
-    max-height: 110px;
+    max-height: 90px;
     right: 0px;
-    bottom: -20px;
+    bottom: -15px;
+    /*
     -moz-transform: none;
     -webkit-transform: none;
     -o-transform: none;
     -ms-transform: none;
     transform: none;
+    */
+    -moz-transform: rotate(-20deg) translateY(50px);
+    -webkit-transform: rotate(-20deg) translateY(50px);
+    -o-transform: rotate(-20deg) translateY(50px);
+    -ms-transform: rotate(-20deg) translateY(50px);
+    transform: rotate(-20deg) translateY(50px);
   }
 
   header.container {
