@@ -29,6 +29,7 @@
 html[data-theme='light'] {
   --background: #e0e5f1;
   --nav-background: #e0e5f1a4;
+  --portfolio-overlay: #6b98c97c;
   --body: #1B1B26;
   --faded: #9fa6b6;
   --primary: #6b98c9;
@@ -38,13 +39,20 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
   --background: #1B1B26;
   --nav-background: #1b1b26ad;
+  --portfolio-overlay: #1b1b268a;
   --body: #e0e5f1;
   --faded: #4f4f6b;
   --primary: #AA9FFF;
   --secondary: #F5D324;
 }
 
+.primary {
+  color: var(--primary);
+}
 
+.secondary {
+  color: var(--secondary);
+}
 
 body {
   font-family: 'JetBrains Mono', sans-serif;
@@ -100,10 +108,10 @@ p {
   font-weight: 600;
 }
 
-.date {
+.comment {
   color: var(--faded);
   display: block;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
   font-size: 1em;
   font-style: italic;
 }
@@ -128,7 +136,7 @@ a:hover {
 
 /* Typography Before/After Embellishments */
 
-.date::before {
+.comment::before {
   content: '// ';
   color: var(--faded);
 }
@@ -143,7 +151,7 @@ a:hover {
   color: var(--faded);
 }
 
-.section-entry::after, .portfolio-summary-wrapper::after {
+.section-entry::after {
   content: '}';
   color: var(--faded);
   display: block;
@@ -487,6 +495,13 @@ a,
   transition: all 0.3s;
 }
 
+.portfolio-image-wrapper,
+.portfolio-image-wrapper:before,
+.portfolio-overlay {
+  transition: all 0.4s;
+  transition-delay: 0.08s;
+}
+
 body {
   transition: background 0.3s;
 }
@@ -542,34 +557,56 @@ body {
 
 .portfolio-entry {
   display: flex;
-  gap: 1.5em;
+  flex-wrap: wrap;
 }
 
-.portfolio-entry > div {
-  width: 50%;
-}
-
-.portfolio-summary-wrapper {
-
-}
-
-/*
 .portfolio-image-wrapper {
-  height: 300px;
-  overflow: hidden;
-} */
-
-.portfolio-image-wrapper img {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: all 6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Padding and Margin below fixes blurring glitch on hover animation */
+  padding: 1px;
+  margin: -1px;
+  margin-block-end: 0.5em;
 }
 
-.portfolio-image-wrapper:hover img, .portfolio-image-wrapper:active img {
-  object-position: bottom center;
+.portfolio-image-wrapper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: var(--nav-background);
+}
+
+.portfolio-image-wrapper:hover .portfolio-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.portfolio-image-wrapper:hover:before {
+  backdrop-filter: none;
+  background-color: unset;
+}
+
+.portfolio-overlay {
+  font-family: 'Pixel NES';
+  font-size: 1.4em;
+  color: var(--body);
+  text-shadow: 0.1em 0.1em 0.5em var(--background);
+  margin: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75em;
 }
 
 /* Lightbox */
