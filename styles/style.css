@@ -143,7 +143,7 @@ a:hover {
   color: var(--faded);
 }
 
-.section-entry::after {
+.section-entry::after, .portfolio-summary-wrapper::after {
   content: '}';
   color: var(--faded);
   display: block;
@@ -434,7 +434,7 @@ button,
 
 /* Theme Toggle */
 
-.toggle-button {
+.button {
   cursor: pointer;
   display: block;
   padding: 7px 5px;
@@ -444,7 +444,7 @@ button,
   min-width: 80px;
 }
 
-.toggle-button:active {
+.button:active {
   transform: translateY(2px);
   transition-duration: 0.1s;
 }
@@ -474,7 +474,7 @@ a,
 .container,
 .programming-skill,
 .it-skill,
-.toggle-button,
+.button,
 #tom-dawson,
 #front-end-developer,
 .p-subtitle,
@@ -541,31 +541,40 @@ body {
 /* Portfolio */
 
 .portfolio-entry {
+  display: flex;
+  gap: 1.5em;
+}
 
+.portfolio-entry > div {
+  width: 50%;
 }
 
 .portfolio-summary-wrapper {
 
 }
 
+/*
 .portfolio-image-wrapper {
   height: 300px;
   overflow: hidden;
-}
+} */
 
 .portfolio-image-wrapper img {
-  width: 50%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: all 11s ease-in-out;
+  transition: all 6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
   border-radius: 3px;
-  
 }
 
 .portfolio-image-wrapper:hover img, .portfolio-image-wrapper:active img {
   object-position: bottom center;
 }
+
+/* Lightbox */
+
+
 
 /* Mobile breakpoint */
 
