@@ -556,6 +556,16 @@ body {
   flex-wrap: wrap;
 }
 
+/*
+.portfolio-entry::after {
+  content: '';
+  width: 100%;
+  display: block;
+  border-bottom: 2px dashed var(--primary);
+  margin-block: 1em;
+}
+*/
+
 .portfolio-image-wrapper {
   position: relative;
   width: 100%;
@@ -597,7 +607,7 @@ body {
   font-family: 'Pixel NES';
   font-size: 1.4em;
   color: var(--body);
-  text-shadow: 1px 1px 0px #3b3b3b, -1px -1px 0px #3b3b3b, 1px -1px 0px #3b3b3b, -1px 1px 0px #3b3b3b;
+  text-shadow: 1px 1px 1px #3b3b3b, -1px -1px 1px #3b3b3b, 1px -1px 1px #3b3b3b, -1px 1px px #1B1B26;
   margin: 0;
   position: absolute;
   display: flex;
