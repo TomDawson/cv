@@ -37,7 +37,6 @@
 html[data-theme="light"] {
   --background: #e0e5f1;
   --nav-background: #e0e5f1a4;
-  --portfolio-overlay: #6b98c9b6;
   --body: #1f1a0e;
   --faded: #9fa6b6;
   --primary: #6b98c9;
@@ -47,8 +46,7 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --background: #1b1b26;
   --nav-background: #1b1b26ad;
-  --portfolio-overlay: #1b1b26b6;
-  --body: #e0e5f1; /*#E4E4D9*/
+  --body: #e0e5f1;
   --faded: #4f4f6b;
   --primary: #aa9fff;
   --secondary: #f5d324;
@@ -71,11 +69,10 @@ body {
   text-align: left;
   text-rendering: optimizeSpeed;
   line-height: 1.3;
-  margin: 0;
   padding: 0;
 }
 
-p {
+p, body {
   margin: 0;
 }
 
@@ -181,7 +178,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 .visually-hidden {
@@ -581,8 +578,20 @@ body {
 /* Portfolio */
 
 .portfolio-logo {
-  max-height: 35px;
   float: right;
+}
+
+#actuator-logo {
+  max-height: 28px;
+}
+#swyftx-logo {
+  max-height: 35px;
+}
+#td-logo {
+  max-height: 42px;
+}
+#nj-logo {
+  max-height: 48px;
 }
 
 /* Mobile breakpoint */
@@ -639,6 +648,22 @@ body {
 
   .toggle-button:hover {
     opacity: 1;
+  }
+
+  #actuator-logo {
+    max-height: 20px;
+  }
+
+  #swyftx-logo {
+    max-height: 28px;
+  }
+
+  #td-logo {
+    max-height: 32px;
+  }
+
+  #nj-logo {
+    max-height: 38px;
   }
 
   /* ^ Mobile Styles ^ */
