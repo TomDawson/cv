@@ -36,7 +36,7 @@
 
 html[data-theme="light"] {
   --background: #e0e5f1;
-  --nav: #e0e5f1a4;
+  --nav-background: #e0e5f1a4;
   --body: #1f1a0e;
   --faded: #9fa6b6;
   --primary: #6b98c9;
@@ -45,33 +45,19 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   --background: #1b1b26;
-  --nav: #1b1b26ad;
+  --nav-background: #1b1b26ad;
   --body: #e0e5f1;
   --faded: #4f4f6b;
   --primary: #aa9fff;
   --secondary: #f5d324;
 }
 
-.primary, .skill-key.developer, a {
+.primary {
   color: var(--primary);
 }
 
-.secondary, .skill-key.it {
+.secondary {
   color: var(--secondary);
-}
-
-.faded {
-  color: var(--faded);
-}
-
-.programming-skill {
-  background-color: var(--primary);
-  color: var(--background);
-}
-
-.it-skill {
-  background-color: var(--secondary);
-  color: var(--background);
 }
 
 body {
@@ -90,6 +76,89 @@ p, body {
   margin: 0;
 }
 
+.flex {
+  
+}
+
+#site-wrapper {
+  display: flex;
+  min-height: 100vh; /* container always  */
+  flex-direction: column; /* containers flex vertically */
+  justify-content: center; /* centered vertically */
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.entry-points {
+  list-style-type: none;
+  display: block;
+  padding-left: 1em;
+}
+
+.entry-points li + li {
+  /* Apply start margin between <li> */
+  margin-block-start: 0.7em;
+}
+
+.entry-points li::marker {
+  color: var(--faded);
+  content: "· ";
+}
+
+/* Typography */
+
+#intro {
+  text-align: left;
+}
+
+#intro em {
+  font-style: normal;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.comment {
+  color: var(--faded);
+  display: block;
+  padding-bottom: 0.2em;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.p-title {
+  padding-bottom: 0.5em;
+  color: var(--primary);
+}
+
+a {
+  color: var(--primary);
+  /* text-decoration: none; */
+}
+
+/* Typography Before/After Embellishments */
+
+.comment::before {
+  content: "// ";
+  color: var(--faded);
+}
+
+.p-title::after {
+  content: " = ";
+  color: var(--faded);
+}
+
+.p-subtitle::after {
+  content: "() {";
+  color: var(--faded);
+}
+
+.section-entry::after {
+  content: "}";
+  color: var(--faded);
+  display: block;
+}
+
 /* Headings and Titles */
 
 h1,
@@ -102,6 +171,33 @@ h6 {
   font-weight: 100;
   margin: 0;
   line-height: 1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.6em;
+}
+
+.visually-hidden {
+  /* For H1 SEO */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(
+    1px 1px 1px 1px
+  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px, 1px, 1px, 1px); /* support legacy browsers */
+  clip-path: inset(
+    50%
+  ); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 
 h1 {
@@ -122,7 +218,7 @@ h1 {
 #front-end-developer {
   /* Size of title container */
   height: 40px;
-  letter-spacing: 1.4px;
+  letter-spacing: 2px;
 }
 
 #tom-dawson text {
@@ -134,63 +230,6 @@ h1 {
 #front-end-developer text {
   font-size: 0.71em;
   transform: translateY(30px);
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1.6em;
-}
-
-/* Typography */
-
-#intro em {
-  font-style: normal;
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.comment {
-  display: block;
-  padding-bottom: 0.5em;
-  font-style: italic;
-}
-
-.p-title {
-  padding-bottom: 0.5em;
-}
-
-/* Before/After content */
-
-.p-title::after, .p-subtitle::after, .section-entry::after, .entry-points li::marker {
-  color: var(--faded);
-}
-
-.entry-points li::marker {
-  content: "· ";
-}
-
-.flex-key *::before {
-  content: " ⬤ ";
-}
-
-.comment::before {
-  content: "// ";
-}
-
-.p-title::after {
-  content: " = ";
-}
-
-.p-subtitle::after {
-  content: "() {";
-}
-
-.section-entry::after {
-  content: "}";
-  display: block;
 }
 
 /* Page Structure */
@@ -222,28 +261,9 @@ h6 {
   margin-block-start: 1em;
 }
 
-#site-wrapper {
-  display: flex;
-  min-height: 100vh; /* container always  */
-  flex-direction: column; /* containers flex vertically */
-  justify-content: center; /* centered vertically */
-  pointer-events: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.entry-points {
-  list-style-type: none;
-  display: block;
-  padding-left: 1em;
-}
-
-.entry-points li + li {
-  /* Apply start margin between <li> */
-  margin-block-start: 0.7em;
-}
-
 /* Flexbox || Competencies */
+
+/* Skill Boxes */
 
 .flex-key {
   display: flex;
@@ -254,8 +274,31 @@ h6 {
   margin-block-end: 0em;
 }
 
+.flex-key *::before {
+  content: " ⬤ ";
+  font-size: 1em;
+}
+
 .flex-key :not(:last-child) {
   padding-right: 20px;
+}
+
+.skill-key.developer {
+  color: var(--primary);
+}
+
+.skill-key.it {
+  color: var(--secondary);
+}
+
+.programming-skill {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.it-skill {
+  background-color: var(--secondary);
+  color: var(--background);
 }
 
 .flex-container {
@@ -319,10 +362,14 @@ nav /* #navbar */ {
   margin-bottom: 2em;
   gap: 10px;
   backdrop-filter: blur(5px);
-  background-color: var(--nav);
+  background-color: var(--nav-background);
 }
 
 /* Header Links */
+
+.break {
+  display: none;
+}
 
 .email-address {
   display: flex;
@@ -342,48 +389,34 @@ nav /* #navbar */ {
   align-items: center;
 }
 
-/* Portfolio */
-
-.portfolio-logo {
-  float: right;
-}
-
-#actuator-logo {
-  max-height: 28px;
-}
-
-#swyftx-logo {
-  max-height: 35px;
-}
-
-#td-logo {
-  max-height: 42px;
-}
-
-#nj-logo {
-  max-height: 48px;
-}
-
+/* Header + Footer Sticking */
 
 /* Footer */
 
 footer p {
-  margin-block: 0.5em;
+  /* Normalize default styles */
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 #footer-global {
   font-family: "Pixel NES", sans-serif;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   letter-spacing: 0.3px;
-  border-top: dashed 2px var(--primary);
+  padding: 5px 0px 5px 0px;
+  border-top: dashed 2px var(--primary); /* Perf. line border */
+  /* position: sticky;
+  bottom: -1px; /* -1px is important for JS to apply .sticky class to nav */
 }
 
 .obviously {
-  font-size: 0.5em;
+  color: var(--faded);
+  font-size: 0.5rem;
   font-style: italic;
+  font-weight: 100;
 }
 
-/* Selection */
+/* Selection/Highlighting */
 
 .social-icon::selection,
 svg text::selection,
@@ -432,6 +465,8 @@ button,
   -webkit-appearance: button;
   border-width: 0px;
 }
+
+/* Theme Toggle */
 
 .button {
   cursor: pointer;
@@ -540,24 +575,23 @@ body {
   }
 }
 
-/* For H1 SEO */
+/* Portfolio */
 
-.visually-hidden { 
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(
-    1px 1px 1px 1px
-  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px, 1px, 1px, 1px); /* support legacy browsers */
-  clip-path: inset(
-    50%
-  ); /*modern browsers, clip-path works inwards from each corner*/
-  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+.portfolio-logo {
+  float: right;
+}
+
+#actuator-logo {
+  max-height: 28px;
+}
+#swyftx-logo {
+  max-height: 35px;
+}
+#td-logo {
+  max-height: 42px;
+}
+#nj-logo {
+  max-height: 48px;
 }
 
 /* Mobile breakpoint */
@@ -569,6 +603,14 @@ body {
 
   #front-end-developer text {
     font-size: 0.55em;
+  }
+
+  .break {
+    display: flex;
+    margin-bottom: -5px;
+    flex-basis: 100%;
+    flex-grow: 1;
+    gap: 0;
   }
 
   .email-address {
@@ -585,18 +627,19 @@ body {
     max-height: 90px;
     right: 0px;
     bottom: -15px;
+
     -moz-transform: none;
     -webkit-transform: none;
     -o-transform: none;
     -ms-transform: none;
     transform: none;
+
     /*
     -moz-transform: rotate(-20deg) translateY(50px);
     -webkit-transform: rotate(-20deg) translateY(50px);
     -o-transform: rotate(-20deg) translateY(50px);
     -ms-transform: rotate(-20deg) translateY(50px);
-    transform: rotate(-20deg) translateY(50px);
-    */
+    transform: rotate(-20deg) translateY(50px); */
   }
 
   header.container {
