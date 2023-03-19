@@ -1,0 +1,51 @@
+#site-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.flex-key {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: baseline;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+  }
+  
+  .flex-container > * {
+    display: flex;
+    text-align: center;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    /* These make the tiles stretch */
+    flex-grow: 1;
+    width: auto;
+  }
+
+  nav /* #navbar */ {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .email-address {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .social-icon-container {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+  }
