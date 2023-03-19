@@ -1,49 +1,57 @@
 /* Fonts */
 
-@font-face { /* JetBrains */
+@font-face {
+  /* JetBrains */
   font-display: swap;
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: normal;
-  src: url('../fonts/jetbrains-mono-v13-latin-regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/jetbrains-mono-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/jetbrains-mono-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/jetbrains-mono-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/jetbrains-mono-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono') format('svg'); /* Legacy iOS */
+  src: url("../fonts/jetbrains-mono-v13-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/jetbrains-mono-v13-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/jetbrains-mono-v13-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/jetbrains-mono-v13-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/jetbrains-mono-v13-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono")
+      format("svg"); /* Legacy iOS */
 }
 
-@font-face { /* Pixel NES */
+@font-face {
+  /* Pixel NES */
   font-display: swap;
-  font-family: 'Pixel NES';
+  font-family: "Pixel NES";
   font-weight: normal;
   font-style: normal;
-  src: url('../fonts/Pixel_NES.eot?') format('eot'),
-       url('../fonts/Pixel_NES.woff') format('woff'),
-       url('../fonts/Pixel_NES.ttf') format('truetype'),
-       url('../fonts/Pixel_NES.svg#PixelNES') format('svg');
+  src: url("../fonts/Pixel_NES.eot?") format("eot"),
+    url("../fonts/Pixel_NES.woff") format("woff"),
+    url("../fonts/Pixel_NES.ttf") format("truetype"),
+    url("../fonts/Pixel_NES.svg#PixelNES") format("svg");
 }
 
 /* Theming and Structure */
 
-html[data-theme='light'] {
+html[data-theme="light"] {
   --background: #e0e5f1;
   --nav-background: #e0e5f1a4;
   --portfolio-overlay: #6b98c9b6;
-  --body: #1B1B26;
+  --body: #1b1b26;
   --faded: #9fa6b6;
   --primary: #6b98c9;
-  --secondary: #C69232;
+  --secondary: #c69232;
 }
 
-html[data-theme='dark'] {
-  --background: #1B1B26;
+html[data-theme="dark"] {
+  --background: #1b1b26;
   --nav-background: #1b1b26ad;
-  --portfolio-overlay: #1B1B26b6;
+  --portfolio-overlay: #1b1b26b6;
   --body: #e0e5f1;
   --faded: #4f4f6b;
-  --primary: #AA9FFF;
-  --secondary: #F5D324;
+  --primary: #aa9fff;
+  --secondary: #f5d324;
 }
 
 .primary {
@@ -55,7 +63,7 @@ html[data-theme='dark'] {
 }
 
 body {
-  font-family: 'JetBrains Mono', sans-serif;
+  font-family: "JetBrains Mono", sans-serif;
   font-size: 1em;
   letter-spacing: -0.5px;
   color: var(--body);
@@ -83,17 +91,18 @@ p {
 
 .entry-points {
   list-style-type: none;
-  display:block;
+  display: block;
   padding-left: 1em;
 }
 
-.entry-points li + li { /* Apply start margin between <li> */
+.entry-points li + li {
+  /* Apply start margin between <li> */
   margin-block-start: 0.7em;
 }
 
 .entry-points li::marker {
   color: var(--faded);
-  content: '· ';
+  content: "· ";
 }
 
 /* Typography */
@@ -130,57 +139,67 @@ a {
   /* text-decoration: none; */
 }
 
-a:hover {
-  opacity: 0.5;
-}
-
 /* Typography Before/After Embellishments */
 
 .comment::before {
-  content: '// ';
+  content: "// ";
   color: var(--faded);
 }
 
 .p-title::after {
-  content: ' = ';
+  content: " = ";
   color: var(--faded);
 }
 
 .p-subtitle::after {
-  content: '() {';
+  content: "() {";
   color: var(--faded);
 }
 
 .section-entry::after {
-  content: '}';
+  content: "}";
   color: var(--faded);
   display: block;
 }
 
 /* Headings and Titles */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Pixel NES', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pixel NES", sans-serif;
   font-weight: 100;
   margin: 0;
-  line-height:1;
+  line-height: 1;
 }
 
-h2, h3, h4, h5, h6 {
-  font-size:1.4em;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.4em;
 }
 
-.visually-hidden { /* For H1 SEO */
+.visually-hidden {
+  /* For H1 SEO */
   border: 0;
   padding: 0;
   margin: 0;
   position: absolute !important;
-  height: 1px; 
+  height: 1px;
   width: 1px;
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(
+    1px 1px 1px 1px
+  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
   clip: rect(1px, 1px, 1px, 1px); /* support legacy browsers */
-  clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+  clip-path: inset(
+    50%
+  ); /*modern browsers, clip-path works inwards from each corner*/
   white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 
@@ -189,20 +208,24 @@ h1 {
   overflow: visible;
 }
 
-#tom-dawson, #front-end-developer {
+#tom-dawson,
+#front-end-developer {
   width: 100%;
 }
 
-#tom-dawson { /* Size of title container */
-  height:40px;
+#tom-dawson {
+  /* Size of title container */
+  height: 40px;
 }
 
-#front-end-developer { /* Size of title container */
+#front-end-developer {
+  /* Size of title container */
   height: 40px;
   letter-spacing: 2px;
 }
 
-#tom-dawson text { /* Positioning text inside container */
+#tom-dawson text {
+  /* Positioning text inside container */
   font-size: 1.44em;
   transform: translateY(40px);
 }
@@ -226,15 +249,18 @@ h1 {
   margin: 0px 10px;
 }
 
-.indented > * + * { /* Add margin in between child elements */
+.indented > * + * {
+  /* Add margin in between child elements */
   margin-block-end: 1.5em;
 }
 
-.indented > :last-child { /* Add margin to last child element */
+.indented > :last-child {
+  /* Add margin to last child element */
   margin-block-end: 3em;
 }
 
-.indented > :nth-child(2) { /* Add margin below headings */
+.indented > :nth-child(2) {
+  /* Add margin below headings */
   margin-block-start: 1em;
 }
 
@@ -296,7 +322,7 @@ h1 {
   padding: 7px 10px;
   margin: 5px;
   /* Flex */
-  display:flex;
+  display: flex;
   text-align: center;
   align-self: stretch;
   align-items: center;
@@ -315,7 +341,7 @@ header {
 }
 
 header.container {
-  padding-top:30px;
+  padding-top: 30px;
 }
 
 #portrait {
@@ -323,7 +349,7 @@ header.container {
   position: absolute;
   right: 0px;
   bottom: 25px;
-  overflow-clip-margin: initial;   /* This stops face img from causing shift in nav when scrolling on mobile */
+  overflow-clip-margin: initial; /* This stops face img from causing shift in nav when scrolling on mobile */
 }
 
 nav /* #navbar */ {
@@ -355,7 +381,8 @@ nav /* #navbar */ {
   padding-top: 5px;
 }
 
-.social-icon, .toggle-icon {
+.social-icon,
+.toggle-icon {
   width: 25px;
 }
 
@@ -367,17 +394,16 @@ nav /* #navbar */ {
 
 /* Header + Footer Sticking */
 
-
-
 /* Footer */
 
-footer p { /* Normalize default styles */
+footer p {
+  /* Normalize default styles */
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
 
 #footer-global {
-  font-family: 'Pixel NES', sans-serif;
+  font-family: "Pixel NES", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.3px;
   padding: 5px 0px 5px 0px;
@@ -395,7 +421,10 @@ footer p { /* Normalize default styles */
 
 /* Selection/Highlighting */
 
-.social-icon::selection, svg text::selection, #portrait::selection, #theme-toggle span::selection {
+.social-icon::selection,
+svg text::selection,
+#portrait::selection,
+#theme-toggle span::selection {
   background: none; /* Remove selection highlight */
 }
 
@@ -413,14 +442,14 @@ footer p { /* Normalize default styles */
 
 /* Scrollbar */
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
   width: 6px;
   background: transparent; /* Background */
 }
 
-::-webkit-scrollbar-thumb { 
+::-webkit-scrollbar-thumb {
   background: var(--primary); /* Foreground */
-  transition: all 0.3s; 
+  transition: all 0.3s;
 }
 
 /* Button styling */
@@ -429,15 +458,15 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    overflow: visible;
-    font-family: 'Pixel NES', sans-serif;
-    font-size: 1em;
-    line-height: 1.15;
-    margin: 0;
-    text-transform: none;
-    appearance: button;
-    -webkit-appearance: button;
-    border-width:0px;
+  overflow: visible;
+  font-family: "Pixel NES", sans-serif;
+  font-size: 1em;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: none;
+  appearance: button;
+  -webkit-appearance: button;
+  border-width: 0px;
 }
 
 /* Theme Toggle */
@@ -490,7 +519,9 @@ a,
 #front-end-developer,
 .p-subtitle,
 .p-subtitle::before,
-.p-title {
+.p-title,
+.primary,
+.secondary {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -509,7 +540,8 @@ body {
 
 /* Heading Animation */
 
-#tom-dawson { /* SVG element */
+#tom-dawson {
+  /* SVG element */
   animation: stroke 1.5s;
   fill: var(--primary);
   stroke: var(--primary);
@@ -556,27 +588,18 @@ body {
   flex-wrap: wrap;
 }
 
-/*
-.portfolio-entry::after {
-  content: '';
-  width: 100%;
-  display: block;
-  border-bottom: 2px dashed var(--primary);
-  margin-block: 1em;
-}
-*/
-
 .portfolio-image-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Padding and Margin below fixes blurring glitch on hover animation */
-  padding: 1px;
-  margin: -1px;
+  flex-direction: column;
   margin-block-end: 0.5em;
+}
+
+.portfolio-image-wrapper img {
+  width: 100%;
 }
 
 .portfolio-image-wrapper:before {
@@ -604,25 +627,26 @@ body {
 }
 
 .portfolio-overlay {
-  font-family: 'Pixel NES';
+  font-family: "Pixel NES";
   font-size: 1.4em;
   color: var(--body);
-  text-shadow: 1px 1px 1px #3b3b3b, -1px -1px 1px #3b3b3b, 1px -1px 1px #3b3b3b, -1px 1px px #1B1B26;
+  text-shadow: 1px 1px 0px #3b3b3b, -1px -1px 0px #3b3b3b, 1px -1px 0px #3b3b3b,
+    -1px 1px 0px #1b1b26;
   margin: 0;
   position: absolute;
   display: flex;
-  flex-direction: row;
-  gap: 0.75em;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25em;
 }
-
 
 /* Mobile breakpoint */
 
 @media only screen and (max-width: 480px) {
   #tom-dawson text {
-    font-size:1.15em; 
+    font-size: 1.15em;
   }
-  
+
   #front-end-developer text {
     font-size: 0.55em;
   }
@@ -644,22 +668,24 @@ body {
     padding-top: 5px;
   }
 
-  #portrait, .sticky #portrait {
+  #portrait,
+  .sticky #portrait {
     max-height: 90px;
     right: 0px;
     bottom: -15px;
-    /*
+
     -moz-transform: none;
     -webkit-transform: none;
     -o-transform: none;
     -ms-transform: none;
     transform: none;
-    */
+
+    /*
     -moz-transform: rotate(-20deg) translateY(50px);
     -webkit-transform: rotate(-20deg) translateY(50px);
     -o-transform: rotate(-20deg) translateY(50px);
     -ms-transform: rotate(-20deg) translateY(50px);
-    transform: rotate(-20deg) translateY(50px);
+    transform: rotate(-20deg) translateY(50px); */
   }
 
   header.container {
@@ -670,5 +696,10 @@ body {
     opacity: 1;
   }
 
-/* ^ Mobile Styles ^ */
+  .portfolio-overlay {
+    font-family: 'JetBrains Mono';
+    font-size: 1.1em;
+
+  /* ^ Mobile Styles ^ */
+}
 }
