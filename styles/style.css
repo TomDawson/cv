@@ -38,7 +38,7 @@ html[data-theme="light"] {
   --background: #e0e5f1;
   --nav-background: #e0e5f1a4;
   --portfolio-overlay: #6b98c9b6;
-  --body: #1b1b26;
+  --body: #1f1a0e;
   --faded: #9fa6b6;
   --primary: #6b98c9;
   --secondary: #c69232;
@@ -48,7 +48,7 @@ html[data-theme="dark"] {
   --background: #1b1b26;
   --nav-background: #1b1b26ad;
   --portfolio-overlay: #1b1b26b6;
-  --body: #e0e5f1;
+  --body: #e0e5f1; /*#E4E4D9*/
   --faded: #4f4f6b;
   --primary: #aa9fff;
   --secondary: #f5d324;
@@ -424,7 +424,7 @@ footer p {
 .social-icon::selection,
 svg text::selection,
 #portrait::selection,
-#theme-toggle span::selection {
+.portfolio-logo::selection {
   background: none; /* Remove selection highlight */
 }
 
@@ -511,9 +511,6 @@ a,
 .container,
 .programming-skill,
 .it-skill,
-.portfolio-image-wrapper,
-.portfolio-image-wrapper:before,
-.portfolio-overlay,
 .button,
 #tom-dawson,
 #front-end-developer,
@@ -583,61 +580,9 @@ body {
 
 /* Portfolio */
 
-.portfolio-entry {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.portfolio-image-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-block-end: 0.5em;
-}
-
-.portfolio-image-wrapper img {
-  width: 100%;
-}
-
-.portfolio-image-wrapper:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(2px);
-  background-color: var(--portfolio-overlay);
-}
-
-.portfolio-image-wrapper:hover .portfolio-overlay {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.portfolio-image-wrapper:hover:before {
-  backdrop-filter: none;
-  background-color: unset;
-}
-
-.portfolio-overlay {
-  font-family: "Pixel NES";
-  font-size: 1.4em;
-  color: var(--body);
-  text-shadow: 1px 1px 0px #3b3b3b, -1px -1px 0px #3b3b3b, 1px -1px 0px #3b3b3b,
-    -1px 1px 0px #1b1b26;
-  margin: 0;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25em;
+.portfolio-logo {
+  max-height: 35px;
+  float: right;
 }
 
 /* Mobile breakpoint */
@@ -696,10 +641,5 @@ body {
     opacity: 1;
   }
 
-  .portfolio-overlay {
-    font-family: 'JetBrains Mono';
-    font-size: 1.1em;
-
   /* ^ Mobile Styles ^ */
-}
 }

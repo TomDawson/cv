@@ -11,7 +11,7 @@ const portrait = document.getElementById('portrait');
 const themeToggle = document.getElementById('theme-toggle');
 const darkModeSpan = document.getElementById('dark-mode-span');
 const lightModeSpan = document.getElementById('light-mode-span');
-const socialIcons = document.getElementsByClassName('social-icon');
+const svgIcons = document.getElementsByClassName('svg-icon');
 
 // Retrieve theme preference from device
 var storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -29,8 +29,8 @@ themeToggle.onclick = function() {
         darkModeSpan.style.display = 'block';
         portrait.src = 'images/tom-head-dark.png';
         // Loop through array of social icons to invert them
-        for(var i=0; i < socialIcons.length; i++) {
-            socialIcons[i].style.filter = 'invert(100%)';
+        for(var i=0; i < svgIcons.length; i++) {
+            svgIcons[i].style.filter = 'invert(100%)';
         }
     } else {
         targetTheme = 'light';
@@ -38,8 +38,8 @@ themeToggle.onclick = function() {
         lightModeSpan.style.display = 'block';
         portrait.src = 'images/tom-head-light.png';
         // Loop through socials array to unset filter
-        for(var i=0; i < socialIcons.length; i++) {
-            socialIcons[i].style.filter = 'unset';
+        for(var i=0; i < svgIcons.length; i++) {
+            svgIcons[i].style.filter = 'unset';
         }
     }
 
@@ -54,8 +54,8 @@ function refreshThemeToggle() {
             darkModeSpan.style.display = 'block';
             lightModeSpan.style.display = 'none';
             portrait.src = 'images/tom-head-dark.png';
-            for(var i=0; i < socialIcons.length; i++) {
-                socialIcons[i].style.filter = 'invert(100%)';
+            for(var i=0; i < svgIcons.length; i++) {
+                svgIcons[i].style.filter = 'invert(100%)';
             }
         } else {
             lightModeSpan.style.display = 'block';
