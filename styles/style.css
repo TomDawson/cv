@@ -318,8 +318,8 @@ nav /* #navbar */ {
 
 /* Skill Hover Animation */
 
-.skills-wrapper > *:hover {
-  transform: translateY(-3px);
+.skills-wrapper > *:hover, nav > *:hover  {
+  transform: translateY(-2px);
   transition-duration: 0.05s;
 }
 
@@ -476,8 +476,8 @@ button,
   min-width: 80px;
 }
 
-.button:active {
-  transform: translateY(2px);
+.button:active, nav > *:active {
+  transform: translateY(0px);
   transition-duration: 0.1s;
 }
 
