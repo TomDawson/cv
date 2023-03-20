@@ -261,7 +261,7 @@ h6 {
   justify-content: center;
 }
 
-.center-vertically { /* social-icon-container > center-vertically */
+.center-vertically {
   display: inline-flex;
   align-items: center;
   }
@@ -338,13 +338,11 @@ header.container {
 }
 
 nav /* #navbar */ {
-  display: flex;
-  flex-wrap: wrap;
   position: sticky;
   top: -1px; /* -1px is important for JS to apply .sticky class to nav */
   z-index: 2;
   padding: 15px 0px 15px 0px;
-  border-bottom: dashed 2px var(--primary); /* Perf. line border */
+  border-bottom: dashed 2px var(--primary); /* line border */
   margin-bottom: 2em;
   gap: 10px;
   backdrop-filter: blur(5px);
@@ -356,12 +354,6 @@ nav /* #navbar */ {
 .social-icon,
 .toggle-icon {
   width: 25px;
-}
-
-.social-icon-container {
-  vertical-align: middle;
-  display: inline-flex;
-  align-items: center;
 }
 
 /* Portfolio */
