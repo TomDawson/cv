@@ -197,7 +197,7 @@ nav /* #navbar */ {
 }
 
 .social-icon {
-  width: 25px;
+  max-width: 25px;
 }
 
 #portrait {
@@ -327,22 +327,6 @@ nav /* #navbar */ {
 
 .portfolio-logo {
   float: right;
-}
-
-#actuator-logo {
-  max-height: 28px;
-}
-
-#swyftx-logo {
-  max-height: 35px;
-}
-
-#td-logo {
-  max-height: 42px;
-}
-
-#nj-logo {
-  max-height: 48px;
 }
 
 /* Before/After content */
