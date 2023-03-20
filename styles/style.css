@@ -39,8 +39,8 @@ html[data-theme="light"] {
   --nav: #FEFCF6A4;
   --body: #1F1A0E;
   --faded: #BDBAB2;
-  --primary: #4576B0;
-  --secondary: #C18653;
+  --primary: #3A679C;
+  --secondary: #9D6639;
 }
 
 html[data-theme="dark"] {
