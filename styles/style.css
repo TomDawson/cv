@@ -243,8 +243,38 @@ h6 {
   margin-block-start: 0.7em;
 }
 
-/* Flexbox || Competencies */
+/* Flexbox */
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center-vertically { /* social-icon-container > center-vertically */
+  display: inline-flex;
+  align-items: center;
+  }
+
+/* Competencies */
+
+.competencies > * { /* flex-container > competencies */
+  align-self: stretch;
+  flex-grow: 1;
+  width: auto;
+  }
+
+/*  */
 
 .flex-key {
   display: flex;
@@ -308,8 +338,6 @@ header.container {
 }
 
 nav /* #navbar */ {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   position: sticky;
@@ -324,13 +352,6 @@ nav /* #navbar */ {
 }
 
 /* Header Links */
-
-.email-address {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 5px;
-}
 
 .social-icon,
 .toggle-icon {
