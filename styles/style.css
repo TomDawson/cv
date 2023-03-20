@@ -35,21 +35,21 @@
 /* Theming and <body> */
 
 html[data-theme="light"] {
-  --background: #e0e5f1;
-  --nav: #e0e5f1a4;
-  --body: #1f1a0e;
-  --faded: #9fa6b6;
-  --primary: #6b98c9;
-  --secondary: #c69232;
+  --background: #FEFCF6;
+  --nav: #FEFCF6A4;
+  --body: #1F1A0E;
+  --faded: #BDBAB2;
+  --primary: #4576B0;
+  --secondary: #C18653;
 }
 
 html[data-theme="dark"] {
-  --background: #1b1b26;
-  --nav: #1b1b26ad;
-  --body: #e0e5f1;
-  --faded: #4f4f6b;
-  --primary: #aa9fff;
-  --secondary: #f5d324;
+  --background: #1B1B26;
+  --nav: #1B1B26AD;
+  --body: #E0E5F1;
+  --faded: #4F4F6B;
+  --primary: #AA9FFF;
+  --secondary: #F5D324;
 }
 
 body {
