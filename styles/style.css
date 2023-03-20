@@ -329,6 +329,22 @@ nav /* #navbar */ {
   float: right;
 }
 
+#actuator-logo {
+  max-height: 28px;
+}
+
+#swyftx-logo {
+  max-height: 35px;
+}
+
+#td-logo {
+  max-height: 42px;
+}
+
+#nj-logo {
+  max-height: 48px;
+}
+
 /* Before/After content */
 
 .p-title::after, .p-subtitle::after, .section-entry::after, .entry-points li::marker {

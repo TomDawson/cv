@@ -1,0 +1,12 @@
+{
+  "short_name": "Tom Dawson",
+  "name": "Tom Dawson Front End Developer",
+  "icons": [{
+    "src": "images/icon.png",
+    "type": "image/png",
+    "sizes": "54x54"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#1b1b26",
+  "theme_color": "#aa9fff"
+}
