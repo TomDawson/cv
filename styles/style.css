@@ -32,7 +32,7 @@
     url("../fonts/Pixel_NES.svg#PixelNES") format("svg");
 }
 
-/* Theming and Structure */
+/* Theming and <body> */
 
 html[data-theme="light"] {
   --background: #e0e5f1;
@@ -50,6 +50,22 @@ html[data-theme="dark"] {
   --faded: #4f4f6b;
   --primary: #aa9fff;
   --secondary: #f5d324;
+}
+
+body {
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 1em;
+  letter-spacing: -0.7px;
+  color: var(--body);
+  background-color: var(--background);
+  text-align: left;
+  text-rendering: optimizeSpeed;
+  line-height: 1.3;
+  padding: 0;
+}
+
+p, body {
+  margin: 0;
 }
 
 .primary, .skill-key.developer, a {
@@ -74,22 +90,6 @@ html[data-theme="dark"] {
   color: var(--background);
 }
 
-body {
-  font-family: "JetBrains Mono", sans-serif;
-  font-size: 1em;
-  letter-spacing: -0.7px;
-  color: var(--body);
-  background-color: var(--background);
-  text-align: left;
-  text-rendering: optimizeSpeed;
-  line-height: 1.3;
-  padding: 0;
-}
-
-p, body {
-  margin: 0;
-}
-
 /* Headings and Titles */
 
 h1,
@@ -109,33 +109,6 @@ h1 {
   overflow: visible;
 }
 
-#tom-dawson,
-#front-end-developer {
-  width: 100%;
-}
-
-#tom-dawson {
-  /* Size of title container */
-  height: 40px;
-}
-
-#front-end-developer {
-  /* Size of title container */
-  height: 40px;
-  letter-spacing: 1.4px;
-}
-
-#tom-dawson text {
-  /* Positioning text inside container */
-  font-size: 1.44em;
-  transform: translateY(40px);
-}
-
-#front-end-developer text {
-  font-size: 0.71em;
-  transform: translateY(30px);
-}
-
 h2,
 h3,
 h4,
@@ -144,103 +117,105 @@ h6 {
   font-size: 1.6em;
 }
 
-/* Typography */
+/* Header + Heading/Title */
 
-#intro em {
-  font-style: normal;
-  color: var(--primary);
-  font-weight: 600;
+header.container { /* Initial space above title */
+  padding-top: 30px;
 }
 
-.comment {
-  display: block;
-  padding-bottom: 0.5em;
-  font-style: italic;
+#tom-dawson,
+#front-end-developer {
+  width: 100%;
 }
 
-.p-title {
-  padding-bottom: 0.5em;
+#tom-dawson { /* Size of TD container */
+  height: 40px;
 }
 
-/* Before/After content */
-
-.p-title::after, .p-subtitle::after, .section-entry::after, .entry-points li::marker {
-  color: var(--faded);
+#front-end-developer { /* Size of FED container */
+  height: 40px;
+  letter-spacing: 1.4px;
 }
 
-.entry-points li::marker {
-  content: "· ";
+#tom-dawson text { /* Positioning TD text */
+  font-size: 1.44em;
+  transform: translateY(40px);
 }
 
-.flex-key *::before {
-  content: " ⬤ ";
+#front-end-developer text { /* Positioning FED text */
+  font-size: 0.71em;
+  transform: translateY(30px);
 }
 
-.comment::before {
-  content: "// ";
+/* Heading Animation */
+
+#tom-dawson {
+  /* SVG element */
+  animation: stroke 1.5s;
+  fill: var(--primary);
+  stroke: var(--primary);
+  stroke-width: 0.5px;
 }
 
-.p-title::after {
-  content: " = ";
+#front-end-developer {
+  animation: stroke 2s;
+  fill: var(--secondary);
+  stroke: var(--secondary);
+  stroke-width: 0.5px;
 }
 
-.p-subtitle::after {
-  content: "() {";
+@keyframes stroke {
+  0% {
+    fill: transparent;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%; /* No stroke whatsoever */
+    stroke-width: 0.5;
+  }
+  70% {
+    fill: transparent;
+    stroke-width: 0.5;
+  }
+  100% {
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0; /* Unbroken stroke */
+    stroke-width: 0.5;
+  }
 }
 
-.section-entry::after {
-  content: "}";
-  display: block;
+/* Navigation */
+
+nav /* #navbar */ {
+  position: sticky;
+  top: -1px; /* -1px is important for JS to apply .sticky class to nav */
+  z-index: 2;
+  padding: 15px 0px 15px 0px;
+  border-bottom: dashed 2px var(--primary); /* line border */
+  margin-bottom: 2em;
+  gap: 10px;
+  backdrop-filter: blur(5px);
+  background-color: var(--nav);
 }
 
-/* Page Structure */
-
-.container {
-  padding: 0;
-  width: clamp(0px, 95vw, 680px); /* always shrinks, prefers 95vw, max 680px */
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
+.social-icon {
+  width: 25px;
 }
 
-.indented {
-  margin: 0px 10px;
+#portrait {
+  max-height: 220px;
+  position: absolute;
+  right: 0px;
+  bottom: 25px;
+  overflow-clip-margin: initial; /* This stops face img from causing shift in nav when scrolling on mobile */
 }
 
-.indented > * + * {
-  /* Add margin in between child elements */
-  margin-block-end: 1.5em;
-}
+/* Portrait Animation */
 
-.indented > :last-child {
-  /* Add margin to last child element */
-  margin-block-end: 3em;
-}
-
-.indented > :nth-child(2) {
-  /* Add margin below headings */
-  margin-block-start: 1em;
-}
-
-#site-wrapper {
-  display: flex;
-  min-height: 100vh; /* container always  */
-  flex-direction: column; /* containers flex vertically */
-  justify-content: center; /* centered vertically */
-  pointer-events: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.entry-points {
-  list-style-type: none;
-  display: block;
-  padding-left: 1em;
-}
-
-.entry-points li + li {
-  /* Apply start margin between <li> */
-  margin-block-start: 0.7em;
+.sticky #portrait {
+  -moz-transform: rotate(-20deg) translateY(50px);
+  -webkit-transform: rotate(-20deg) translateY(50px);
+  -o-transform: rotate(-20deg) translateY(50px);
+  -ms-transform: rotate(-20deg) translateY(50px);
+  transform: rotate(-20deg) translateY(50px);
 }
 
 /* Flexbox */
@@ -264,96 +239,88 @@ h6 {
 .center-vertically {
   display: inline-flex;
   align-items: center;
-  }
+}
 
-/* Competencies */
-
-.competencies > * { /* flex-container > competencies */
+.stretch-children > * {
+  /* These make the tiles stretch */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   align-self: stretch;
   flex-grow: 1;
   width: auto;
-  }
+}
 
-/*  */
+/* CV Structure */
 
-.flex-key {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: baseline;
+#site-wrapper {
+  min-height: 100vh;
+  justify-content: center; /* centered vertically */
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.container { /* always shrinks, prefers 95vw, max 680px */
+  padding: 0;
+  width: clamp(0px, 95vw, 680px); 
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.indented { /* Adds L/R gutter around everything between <header> and <footer> */
+  margin: 0px 10px;
+}
+
+.indented > * + * { /* Add margin in between child elements */
+  margin-block-end: 1.5em;
+}
+
+.indented > :last-child { /* Add margin to last child element */
+  margin-block-end: 3em;
+}
+
+.indented > :nth-child(2) { /* Add margin below headings */
+  margin-block-start: 1em;
+}
+
+/* Introduction */
+
+#intro em {
+  font-style: normal;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Skills */
+
+.skill-key-wrapper { /* Remove margin beneath Competencies key */
   margin-block-end: 0em;
 }
 
-.flex-key :not(:last-child) {
+.skill-key-wrapper :not(:last-child) { /* Add padding between key elements */
   padding-right: 20px;
 }
 
-.flex-container {
-  padding: 0;
-  margin: 10px 0px 0px -5px;
-  padding-inline-start: 0px;
+.skills-wrapper {
   width: calc(100% + 10px);
-  /* Flex */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: stretch;
+  margin: 10px 0px 0px -5px;
+  padding: 0;
+  padding-inline-start: 0px;
 }
 
-.flex-container > * {
+.skills-wrapper > * {
   list-style-type: none;
-  padding: 7px 10px;
-  margin: 5px;
-  /* Flex */
-  display: flex;
-  text-align: center;
-  align-self: stretch;
-  align-items: center;
-  justify-content: center;
-  /* These make the tiles stretch */
-  flex-grow: 1;
-  width: auto;
+  padding: 8px 8px;
+  margin: 4px;
 }
 
-/* Header styles */
+/* Skill Hover Animation */
 
-header {
-  display: flex;
-  position: relative;
-  z-index: 3;
-}
-
-header.container {
-  padding-top: 30px;
-}
-
-#portrait {
-  max-height: 220px;
-  position: absolute;
-  right: 0px;
-  bottom: 25px;
-  overflow-clip-margin: initial; /* This stops face img from causing shift in nav when scrolling on mobile */
-}
-
-nav /* #navbar */ {
-  position: sticky;
-  top: -1px; /* -1px is important for JS to apply .sticky class to nav */
-  z-index: 2;
-  padding: 15px 0px 15px 0px;
-  border-bottom: dashed 2px var(--primary); /* line border */
-  margin-bottom: 2em;
-  gap: 10px;
-  backdrop-filter: blur(5px);
-  background-color: var(--nav);
-}
-
-/* Header Links */
-
-.social-icon,
-.toggle-icon {
-  width: 25px;
+.skills-wrapper > *:hover {
+  transform: translateY(-3px);
+  transition-duration: 0.05s;
 }
 
 /* Portfolio */
@@ -378,6 +345,58 @@ nav /* #navbar */ {
   max-height: 48px;
 }
 
+/* Before/After content */
+
+.p-title::after, .p-subtitle::after, .section-entry::after, .entry-points li::marker {
+  color: var(--faded);
+}
+
+.entry-points li::marker {
+  content: "· ";
+}
+
+.skill-key-wrapper *::before {
+  content: " ⬤ ";
+}
+
+.comment::before {
+  content: "// ";
+}
+
+.p-title::after {
+  content: " = ";
+}
+
+.p-subtitle::after {
+  content: "() {";
+}
+
+.section-entry::after {
+  content: "}";
+  display: block;
+}
+
+/*  */
+
+.comment {
+  display: block;
+  padding-bottom: 0.5em;
+  font-style: italic;
+}
+
+.p-title {
+  padding-bottom: 0.5em;
+}
+
+.entry-points {
+  list-style-type: none;
+  display: block;
+  padding-left: 1em;
+}
+
+.entry-points li + li { /* Apply start margin between <li> */
+  margin-block-start: 0.7em;
+}
 
 /* Footer */
 
@@ -402,8 +421,8 @@ footer p {
 .social-icon::selection,
 svg text::selection,
 #portrait::selection,
-.portfolio-logo::selection {
-  background: none; /* Remove selection highlight */
+.portfolio-logo::selection { /* Remove selection highlight */
+  background: none;
 }
 
 ::selection {
@@ -421,7 +440,7 @@ svg text::selection,
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
   background: transparent; /* Background */
 }
 
@@ -462,22 +481,6 @@ button,
   transition-duration: 0.1s;
 }
 
-/* Animations */
-
-/* scripts.js removes this class on page load */
-
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 /* Transitions */
 
 nav,
@@ -494,7 +497,7 @@ a,
 .p-subtitle::before,
 .p-title,
 .primary,
-.secondary {
+.secondary { /* Individually calling these classes and elements will syncronise fade transition between light and dark themes */
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -506,52 +509,16 @@ body {
   transition: background 0.3s;
 }
 
-.flex-container > *:hover {
-  transform: translateY(-3px);
-  transition-duration: 0.05s;
+.preload * { /* scripts.js removes this class on page load to prevent fade transition on page load */
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
-/* Heading Animation */
-
-#tom-dawson {
-  /* SVG element */
-  animation: stroke 1.5s;
-  fill: var(--primary);
-  stroke: var(--primary);
-  stroke-width: 0.5px;
-}
-
-#front-end-developer {
-  animation: stroke 2s;
-  fill: var(--secondary);
-  stroke: var(--secondary);
-  stroke-width: 0.5px;
-}
-
-.sticky #portrait {
-  -moz-transform: rotate(-20deg) translateY(50px);
-  -webkit-transform: rotate(-20deg) translateY(50px);
-  -o-transform: rotate(-20deg) translateY(50px);
-  -ms-transform: rotate(-20deg) translateY(50px);
-  transform: rotate(-20deg) translateY(50px);
-}
-
-@keyframes stroke {
-  0% {
-    fill: transparent;
-    stroke-dashoffset: 25%;
-    stroke-dasharray: 0 50%; /* No stroke whatsoever */
-    stroke-width: 0.5;
-  }
-  70% {
-    fill: transparent;
-    stroke-width: 0.5;
-  }
-  100% {
-    stroke-dashoffset: -25%;
-    stroke-dasharray: 50% 0; /* Unbroken stroke */
-    stroke-width: 0.5;
-  }
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 /* For H1 SEO */
@@ -585,10 +552,6 @@ body {
     font-size: 0.55em;
   }
 
-  .email-address {
-    padding-top: 0px;
-  }
-
   .p-subtitle {
     display: block;
     padding-top: 5px;
@@ -599,18 +562,12 @@ body {
     max-height: 90px;
     right: 0px;
     bottom: -15px;
+    /* Disable following face on mobile */
     -moz-transform: none;
     -webkit-transform: none;
     -o-transform: none;
     -ms-transform: none;
     transform: none;
-    /*
-    -moz-transform: rotate(-20deg) translateY(50px);
-    -webkit-transform: rotate(-20deg) translateY(50px);
-    -o-transform: rotate(-20deg) translateY(50px);
-    -ms-transform: rotate(-20deg) translateY(50px);
-    transform: rotate(-20deg) translateY(50px);
-    */
   }
 
   header.container {
