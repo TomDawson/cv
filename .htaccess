@@ -9,6 +9,27 @@ ErrorDocument 404 /404.html
     Header always set X-UA-Compatible "IE=edge" "expr=%{CONTENT_TYPE} =~ m#text/html#i"
 </IfModule>
 
+# Expires Headers
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/html "access 1 month"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/javascript "access 1 month”
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType image/svg "access 1 year”
+ExpiresByType image/gif "access 1 year"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType application/javascript "access 1 month"
+ExpiresByType application/x-javascript "access 1 month”
+ExpiresByType application/xhtml+xml "access 1 month""
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 4 days"
+</IfModule>
+
 # Serve resources with the proper media types (f.k.a. MIME types).
 <IfModule mod_mime.c>
 
