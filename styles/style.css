@@ -124,7 +124,7 @@ header.container { /* Initial space above title */
 }
 
 #tom-dawson,
-#front-end-developer {
+#job-title {
   width: 100%;
 }
 
@@ -132,7 +132,7 @@ header.container { /* Initial space above title */
   height: 40px;
 }
 
-#front-end-developer { /* Size of FED container */
+#job-title { /* Size of FED container */
   height: 40px;
   letter-spacing: 1.4px;
 }
@@ -142,7 +142,7 @@ header.container { /* Initial space above title */
   transform: translateY(40px);
 }
 
-#front-end-developer text { /* Positioning FED text */
+#job-title text { /* Positioning FED text */
   font-size: 0.71em;
   transform: translateY(30px);
 }
@@ -157,7 +157,7 @@ header.container { /* Initial space above title */
   stroke-width: 0.5px;
 }
 
-#front-end-developer {
+#job-title {
   animation: stroke 2s;
   fill: var(--secondary);
   stroke: var(--secondary);
@@ -287,9 +287,9 @@ nav /* #navbar */ {
 
 /* Introduction */
 
-#intro em {
+em {
   font-style: normal;
-  color: var(--primary);
+  color: var(--secondary);
   font-weight: 800;
 }
 
@@ -318,19 +318,19 @@ nav /* #navbar */ {
 
 /* Skill Hover Animation */
 
-.skills-wrapper > *:hover, nav > *:hover  {
+.skills-wrapper > *:hover, nav > a:hover  {
   transform: translateY(-2px);
   transition-duration: 0.05s;
 }
 
-/* Portfolio */
+/* Logos */
 
-.portfolio-logo {
+.cv-logo {
   float: right;
 }
 
 #actuator-logo {
-  max-height: 28px;
+  max-height: 29px;
 }
 
 #swyftx-logo {
@@ -338,7 +338,7 @@ nav /* #navbar */ {
 }
 
 #td-logo {
-  max-height: 42px;
+  max-height: 36px;
 }
 
 #nj-logo {
@@ -421,7 +421,7 @@ footer p {
 .social-icon::selection,
 svg text::selection,
 #portrait::selection,
-.portfolio-logo::selection { /* Remove selection highlight */
+.cv-logo::selection { /* Remove selection highlight */
   background: none;
 }
 
@@ -492,7 +492,7 @@ a,
 .it-skill,
 .button,
 #tom-dawson,
-#front-end-developer,
+#job-title,
 .p-subtitle,
 .p-subtitle::before,
 .p-title,
@@ -548,7 +548,7 @@ html:focus-within {
     font-size: 1.15em;
   }
 
-  #front-end-developer text {
+  #job-title text {
     font-size: 0.55em;
   }
 
