@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy: default-src 'self'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
   <meta name="color-scheme" content="light dark" />
   <link rel="stylesheet" href="./styles/style.css" />
-  <title>Tom Dawson Software Developer</title>
-  <meta name="description" content="Tom Dawson is a software developer with expertise in HTML, CSS, JavaScript, Python, and more." />
+  <title>Tom Dawson | Developer</title>
+  <meta name="description" content="Tom Dawson is a full stack web developer based in Brisbane, QLD." />
   <meta name="theme-color" content="#1B1B26" />
-  <link rel="icon" sizes="48x48" href="images/icon.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="images/icon.png" />
   <!-- Open Graph -->
   <meta property="og:url" content="https://tomdawson.dev" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tom Dawson Software Developer" />
+  <meta property="og:title" content="Tom Dawson Full Stack Web Developer" />
   <meta property="og:image" content="./images/site-tile.jpg" />
   <meta property="og:image:alt"
     content="A pixellated smiling man's face with words that read 'Tom Dawson Software Developer'" />
@@ -35,15 +35,15 @@
 </head>
 
 <body class="preload">
-  <div id="site-wrapper flex flex-col">
+  <div id="site-wrapper" class="flex flex-col">
     <header class="container">
       <h1>
         <span class="visually-hidden">Tom Dawson, Software Developer</span>
-        <svg id="tom-dawson" aria-hidden="true" focusable="false">
+        <svg id="tom-dawson" aria-hidden="true">
           <text>Tom Dawson</text>
         </svg>
-        <svg id="job-title" aria-hidden="true" focusable="false">
-          <text>Software Developer</text>
+        <svg id="job-title" aria-hidden="true">
+          <text>Full Stack Web Developer</text>
         </svg>
       </h1>
     </header>
@@ -53,17 +53,20 @@
           <span id="light-mode-span">Light</span>
           <span id="dark-mode-span">Dark</span>
         </button>
-        <a class="center-vertically" href="https://github.com/TomDawson" target="_blank"><img alt="GitHub"
-            src="images/github.svg" class="social-icon svg-icon" width="25px" height="26px"  /></a>
-        <a class="center-vertically" href="https://www.linkedin.com/in/tom-dawson-094217101/" target="_blank"><img
-            alt="LinkedIn" src="images/linkedin.svg" class="social-icon svg-icon" width="25px" height="29px" /></a>
-        <a class="center-vertically" href="mailto:tomdaw92@gmail.com"><img alt="Email" src="images/email.svg"
-            class="social-icon svg-icon" width="25px" height="25px" /></a>
+        <a class="center-vertically" href="https://github.com/TomDawson" target="_blank">
+          <img alt="GitHub" src="images/github.svg" class="social-icon svg-icon" width="25" height="26"  />
+        </a>
+        <a class="center-vertically" href="https://www.linkedin.com/in/tom-dawson-094217101/" target="_blank">
+          <img alt="LinkedIn" src="images/linkedin.svg" class="social-icon svg-icon" width="25" height="29" />
+        </a>
+        <a class="center-vertically" href="mailto:tomdaw92@gmail.com" target="_blank">
+          <img alt="Email" src="images/email.svg" class="social-icon svg-icon" width="25" height="25" />
+        </a>
         <img id="portrait" src="images/tom-head-dark.png" alt="Tom Dawson" />
       </nav>
 
-      <summary class="indented"> <!-- Introduction -->
-        <h2>Hey, I'm Tom</h2>
+      <div class="indented"> <!-- Introduction -->
+        <h2>Hey, I'm Tom!</h2>
         <p id="intro">
           I'm a developer who loves working with <em>HTML</em>, <em>CSS</em>, <em>JavaScript</em>, <em>Python</em>, and much more. I've successfully owned and operated a web design business for over five years and am well-suited for challenges requiring creativity, communication, and attention to detail.
         </p>
@@ -74,27 +77,27 @@
 
         </p>
         <p>
-          Get in touch with me: <a href="mailto:tomdaw92@gmail.com">tomdaw92@gmail.com</a>
+          Get in touch with me: <a href="mailto:tomdaw92@gmail.com" target="_blank">tomdaw92@gmail.com</a>
         </p>
-      </summary>
+      </div>
 
       <section class="indented"> <!-- Competencies/Skills -->
         <h3>Competencies</h3>
         <div class="skill-key-wrapper flex flex-row">
-          <span class="skill-key developer">Development</span>
-          <span class="skill-key it">IT</span>
+          <span class="skill-key front-end">Front-End</span>
+          <span class="skill-key back-end">Back-End</span>
+          <span class="skill-key it">Complementary</span>
         </div>
         <ul class="skills-wrapper flex flex-row stretch-children">
-          <li class="programming-skill">HTML</li>
-          <li class="programming-skill">CSS</li>
-          <li class="programming-skill">JavaScript</li>
-          <li class="programming-skill">Python</li>
-          <li class="programming-skill">Flask</li>
-          <li class="programming-skill">React</li>
-          <li class="programming-skill">Responsive Design</li>
-          <li class="programming-skill">Website Optimisation</li>
-          <li class="programming-skill">SEO</li>
-          <li class="programming-skill">Git</li>
+          <li class="front-end-skill">HTML</li>
+          <li class="front-end-skill">CSS</li>
+          <li class="front-end-skill">JavaScript</li>
+          <li class="back-end-skill">Python</li>
+          <li class="back-end-skill">Flask</li>
+          <li class="front-end-skill">Responsive Design</li>
+          <li class="front-end-skill">Website Optimisation</li>
+          <li class="front-end-skill">SEO</li>
+          <li class="front-end-skill">Git</li>
           <li class="it-skill">Jira</li>
           <li class="it-skill">Confluence</li>
           <li class="it-skill">OpsGenie</li>
@@ -102,7 +105,6 @@
           <li class="it-skill">WordPress</li>
           <li class="it-skill">WooCommerce</li>
           <li class="it-skill">cPanel/WHM</li>
-          
         </ul>
       </section>
 
@@ -110,14 +112,14 @@
         <h4>Experience</h4>
         <div class="section-entry">
           <p>
-            <img alt="Actuator Digital logo" id="actuator-logo" class="cv-logo svg-icon" src="images/logo-actuator.svg" width="128px" height="28px" />
+            <img alt="Actuator Digital logo" id="actuator-logo" class="cv-logo svg-icon" src="images/logo-actuator.svg" width="128" height="28" />
             <span class="comment faded">Apr '23 — Current</span>
             <span class="p-title primary">Actuator Digital</span>
-            <span class="p-subtitle secondary">Software Developer</span>
+            <span class="p-subtitle secondary">Full Stack Web Developer</span>
           </p>
           <ul class="entry-points">
             <li>
-              Took ownership of a legacy eCommerce web application that provides government recognized training and certification. Fixed longstanding bugs, added features, and wrote comprehensive documentation in sprint cycles that were on time and under budget. Tech stack: <em>Python Flask</em>, <em>SQLAlchemy</em>, <em>Django</em>, <em>Celery</em>, <em>JavaScript</em>, <em>HTML</em>, and <em>CSS</em>.
+              Took ownership of a legacy <em>Django Stack</em> eCommerce web application that provides nationally recognized training and certification. Fixed longstanding bugs, added features, and wrote comprehensive documentation in sprint cycles that were on time and under budget.
             </li>
             <li>
               Designed and developed <a target="_blank" href="https://onpoint.game/">On Point website</a> for Actuator Digital's debut game development project.
@@ -126,7 +128,7 @@
         </div>
         <div class="section-entry">
           <p>
-            <img alt="Swyftx logo" id="swyftx-logo" class="cv-logo svg-icon" src="images/logo-swyftx.svg" width="102px" height="35px" />
+            <img alt="Swyftx logo" id="swyftx-logo" class="cv-logo svg-icon" src="images/logo-swyftx.svg" width="102" height="35" />
             <span class="comment faded">Nov '21 — Dec '22</span>
             <span class="p-title primary">Swyftx</span>
             <span class="p-subtitle secondary">Application Support Engineer</span>
@@ -138,13 +140,14 @@
             <li>
               Delivered solutions that enabled measurement of key metrics, maintaining SLA's, and auditing data for ISO27001 accreditation.
             </li>
-            <li>Proactively identified opportunities to automate processes and improve IT security at every opportunity.
+            <li>
+              Proactively identified opportunities to automate processes and improve IT security at every opportunity.
             </li>
           </ul>
         </div>
         <div class="section-entry">
           <p>
-            <img alt="Tom Dawson Website Design logo" id="td-logo" class="cv-logo svg-icon" src="images/logo-tom-dawson.svg" width="41px" height="42px" />
+            <img alt="Tom Dawson Website Design logo" id="td-logo" class="cv-logo svg-icon" src="images/logo-tom-dawson.svg" width="41" height="42" />
             <span class="comment faded">Dec '17 — Nov '21</span>
             <span class="p-title primary">Tom Dawson Website Design</span>
             <span class="p-subtitle secondary">Owner Operator</span>
@@ -199,7 +202,7 @@
             <li>
               Achieved HD in Capstone Project, Unix Administration, Network Planning, and Internet Protocols and Services.
             </li>
-
+          </ul>
         </div>
         <div class="section-entry">
           <p>
@@ -211,13 +214,14 @@
             <li>
               Worked with Cisco routers/switches, and Oracle/Microsoft virtual machines to configure functional modern networks.
             </li>
+          </ul>
         </div>
       </section>
 
       <section class="indented"> <!-- Projects -->
         <h6>Projects</h6>
         <div class="section-entry"> <!-- Nicolette Johnson Ceramics -->
-          <img alt="Nicolette Johnson Ceramics logo" id="nj-logo" class="cv-logo svg-icon" src="images/logo-nicolette.svg" width="96px" height="48px" />
+          <img alt="Nicolette Johnson Ceramics logo" id="nj-logo" class="cv-logo svg-icon" src="images/logo-nicolette.svg" width="96" height="48" />
           <p>
             <span class="comment faded">Ongoing</span>
             <span class="p-title primary">Nicolette Johnson Ceramics</span>
@@ -229,7 +233,7 @@
                 website</a> using Wordpress/WooCommerce for storefront.
             </li>
             <li>
-              Specialised configuration for unique products with high demand to be previewed ahead of availability.
+              Specialised for the sale of unique products with high demand to be previewed ahead of availability.
             </li>
             <li>
               Store built to handle spikes of traffic during sale launches and calculate regional shipping and availability when required.

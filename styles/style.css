@@ -1,35 +1,28 @@
 /* Fonts */
-
 @font-face {
-  /* JetBrains */
-  font-display: swap;
   font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/jetbrains-mono-v13-latin-regular.eot"); /* IE9 Compat Modes */
-  src: url("../fonts/jetbrains-mono-v13-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../fonts/jetbrains-mono-v13-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
+  src: url("../fonts/jetbrains-mono-v13-latin-regular.eot");
+  src: url("../fonts/jetbrains-mono-v13-latin-regular.eot?#iefix") format("embedded-opentype"), 
+      url("../fonts/jetbrains-mono-v13-latin-regular.woff2") format("woff2"),
       url("../fonts/jetbrains-mono-v13-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("../fonts/jetbrains-mono-v13-latin-regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono")
-      format("svg"); /* Legacy iOS */
+      url("../fonts/jetbrains-mono-v13-latin-regular.ttf") format("truetype"),
+      url("../fonts/jetbrains-mono-v13-latin-regular.svg#JetBrainsMono") format("svg");
+      font-display: swap;
+      font-weight: normal;
+      font-style: normal;
 }
 
 @font-face {
-  /* Pixel NES */
-  font-display: swap;
-  font-family: "Pixel NES";
-  font-weight: normal;
-  font-style: normal;
-  src: url("../fonts/Pixel_NES.eot?") format("eot"),
-    url("../fonts/Pixel_NES.woff") format("woff"),
-    url("../fonts/Pixel_NES.ttf") format("truetype"),
-    url("../fonts/Pixel_NES.svg#PixelNES") format("svg");
+  font-family: 'Yoster Island';
+  src: url('../fonts/YosterIslandReg.eot');
+  src: url('../fonts/YosterIslandReg.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/YosterIslandReg.woff2') format('woff2'),
+      url('../fonts/YosterIslandReg.woff') format('woff'),
+      url('../fonts/YosterIslandReg.ttf') format('truetype'),
+      url('../fonts/YosterIslandReg.svg#YosterIslandReg') format('svg');
+      font-display: swap;
+      font-weight: normal;
+      font-style: normal;
 }
 
 /* Theming and <body> */
@@ -41,6 +34,8 @@ html[data-theme="light"] {
   --faded: #BDBAB2;
   --primary: #3A679C;
   --secondary: #9D6639;
+  --tertiary: ;
+  --font-weight: 800;
 }
 
 html[data-theme="dark"] {
@@ -50,12 +45,15 @@ html[data-theme="dark"] {
   --faded: #4F4F6B;
   --primary: #AA9FFF;
   --secondary: #F5D324;
+  --tertiary: #3F8EFC;
+  /* --tertiary: #62C370; */
+  --font-weight: 500;
 }
 
 body {
   font-family: "JetBrains Mono", monospace;
   font-size: 1em;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.8px;
   color: var(--body);
   background-color: var(--background);
   text-align: left;
@@ -68,19 +66,26 @@ p, body {
   margin: 0;
 }
 
-.primary, .skill-key.developer, a {
+.primary, .skill-key.front-end, a {
   color: var(--primary);
+  font-weight: var(--font-weight);
 }
 
 .secondary, .skill-key.it {
   color: var(--secondary);
+  font-weight: var(--font-weight);
+}
+
+.tertiary, .skill-key.back-end {
+  color: var(--tertiary);
+  font-weight: var(--font-weight);
 }
 
 .faded {
   color: var(--faded);
 }
 
-.programming-skill {
+.front-end-skill {
   background-color: var(--primary);
   color: var(--background);
 }
@@ -91,17 +96,17 @@ p, body {
 }
 
 /* Headings and Titles */
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Pixel NES", sans-serif;
+  font-family: "Yoster Island", sans-serif;
   font-weight: 100;
   margin: 0;
   line-height: 1;
+  letter-spacing: 0;
 }
 
 h1 {
@@ -114,12 +119,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 1.6em;
+  font-size: 1.85em;
 }
 
 /* Header + Heading/Title */
-
-header.container { /* Initial space above title */
+header.container { 
   padding-top: 30px;
 }
 
@@ -128,29 +132,31 @@ header.container { /* Initial space above title */
   width: 100%;
 }
 
-#tom-dawson { /* Size of TD container */
+/* Size of name container */
+#tom-dawson {
   height: 40px;
 }
 
-#job-title { /* Size of FED container */
+/* Size of job title container */
+#job-title {
   height: 40px;
   letter-spacing: 1.4px;
 }
 
-#tom-dawson text { /* Positioning TD text */
+/* Positioning name text */
+#tom-dawson text {
   font-size: 1.44em;
   transform: translateY(40px);
 }
 
-#job-title text { /* Positioning FED text */
+/* Positioning job title text */
+#job-title text {
   font-size: 0.71em;
   transform: translateY(30px);
 }
 
 /* Heading Animation */
-
 #tom-dawson {
-  /* SVG element */
   animation: stroke 1.5s;
   fill: var(--primary);
   stroke: var(--primary);
@@ -183,8 +189,7 @@ header.container { /* Initial space above title */
 }
 
 /* Navigation */
-
-nav /* #navbar */ {
+nav {
   position: sticky;
   top: -1px; /* -1px is important for JS to apply .sticky class to nav */
   z-index: 2;
@@ -209,7 +214,6 @@ nav /* #navbar */ {
 }
 
 /* Portrait Animation */
-
 .sticky #portrait {
   -moz-transform: rotate(-20deg) translateY(50px);
   -webkit-transform: rotate(-20deg) translateY(50px);
@@ -218,8 +222,7 @@ nav /* #navbar */ {
   transform: rotate(-20deg) translateY(50px);
 }
 
-/* Flexbox */
-
+/* Flex */
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -242,7 +245,6 @@ nav /* #navbar */ {
 }
 
 .stretch-children > * {
-  /* These make the tiles stretch */
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -252,16 +254,15 @@ nav /* #navbar */ {
 }
 
 /* CV Structure */
-
 #site-wrapper {
   min-height: 100vh;
-  justify-content: center; /* centered vertically */
+  justify-content: center;
   pointer-events: auto;
   position: relative;
   z-index: 1;
 }
 
-.container { /* always shrinks, prefers 95vw, max 680px */
+.container {
   padding: 0;
   width: clamp(0px, 95vw, 680px); 
   margin-left: auto;
@@ -269,37 +270,39 @@ nav /* #navbar */ {
   box-sizing: border-box;
 }
 
-.indented { /* Adds L/R gutter around everything between <header> and <footer> */
+/* Adds L+R gutter around everything between <header> and <footer> */
+.indented {
   margin: 0px 10px;
 }
 
-.indented > * + * { /* Add margin in between child elements */
+/* Add margin in between child elements */
+.indented > * + * {
   margin-block-end: 1.5em;
 }
 
-.indented > :last-child { /* Add margin to last child element */
+/* Add margin to last child element */
+.indented > :last-child {
   margin-block-end: 3em;
 }
 
-.indented > :nth-child(2) { /* Add margin below headings */
+/* Add margin below headings */
+.indented > :nth-child(2) {
   margin-block-start: 1em;
 }
 
 /* Introduction */
-
 em {
   font-style: normal;
   color: var(--secondary);
-  font-weight: 800;
+  font-weight: var(--font-weight);
 }
 
 /* Skills */
-
-.skill-key-wrapper { /* Remove margin beneath Competencies key */
+.skill-key-wrapper {
   margin-block-end: 0em;
 }
 
-.skill-key-wrapper :not(:last-child) { /* Add padding between key elements */
+.skill-key-wrapper :not(:last-child) {
   padding-right: 20px;
 }
 
@@ -317,14 +320,12 @@ em {
 }
 
 /* Skill Hover Animation */
-
 .skills-wrapper > *:hover, nav > a:hover  {
   transform: translateY(-2px);
   transition-duration: 0.05s;
 }
 
 /* Logos */
-
 .cv-logo {
   float: right;
 }
@@ -346,9 +347,9 @@ em {
 }
 
 /* Before/After content */
-
 .p-title::after, .p-subtitle::after, .section-entry::after, .entry-points li::marker {
   color: var(--faded);
+  font-weight: 500;
 }
 
 .entry-points li::marker {
@@ -376,8 +377,6 @@ em {
   display: block;
 }
 
-/*  */
-
 .comment {
   display: block;
   padding-bottom: 0.5em;
@@ -394,18 +393,17 @@ em {
   padding-left: 1em;
 }
 
-.entry-points li + li { /* Apply start margin between <li> */
+.entry-points li + li {
   margin-block-start: 0.7em;
 }
 
 /* Footer */
-
 footer p {
   margin-block: 0.5em;
 }
 
 #footer-global {
-  font-family: "Pixel NES", sans-serif;
+  font-family: "Yoster Island", sans-serif;
   font-size: 0.8em;
   letter-spacing: 0.3px;
   border-top: dashed 2px var(--primary);
@@ -417,11 +415,10 @@ footer p {
 }
 
 /* Selection */
-
 .social-icon::selection,
 svg text::selection,
 #portrait::selection,
-.cv-logo::selection { /* Remove selection highlight */
+.cv-logo::selection {
   background: none;
 }
 
@@ -438,29 +435,27 @@ svg text::selection,
 }
 
 /* Scrollbar */
-
 ::-webkit-scrollbar {
   width: 8px;
-  background: transparent; /* Background */
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary); /* Foreground */
+  background: var(--primary);
   transition: all 0.3s;
 }
 
 /* Button styling */
-
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   overflow: visible;
-  font-family: "Pixel NES", sans-serif;
-  font-size: 1em;
+  font-family: "Yoster Island", sans-serif;
+  font-size: 1.25em;
   line-height: 1.15;
   margin: 0;
-  text-transform: none;
+  text-transform: uppercase;
   appearance: button;
   -webkit-appearance: button;
   border-width: 0px;
@@ -482,13 +477,13 @@ button,
 }
 
 /* Transitions */
-
+/* Individually calling these classes and elements will syncronise fade transition between light and dark themes */
 nav,
 hr,
 img,
 a,
 .container,
-.programming-skill,
+.front-end-skill,
 .it-skill,
 .button,
 #tom-dawson,
@@ -497,7 +492,7 @@ a,
 .p-subtitle::before,
 .p-title,
 .primary,
-.secondary { /* Individually calling these classes and elements will syncronise fade transition between light and dark themes */
+.secondary { 
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -521,8 +516,6 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-/* For H1 SEO */
-
 .visually-hidden { 
   border: 0;
   padding: 0;
@@ -533,16 +526,15 @@ html:focus-within {
   overflow: hidden;
   clip: rect(
     1px 1px 1px 1px
-  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px, 1px, 1px, 1px); /* support legacy browsers */
+  );
+  clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(
     50%
-  ); /*modern browsers, clip-path works inwards from each corner*/
-  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  );
+  white-space: nowrap;
 }
 
 /* Mobile breakpoint */
-
 @media only screen and (max-width: 480px) {
   #tom-dawson text {
     font-size: 1.15em;
@@ -562,7 +554,6 @@ html:focus-within {
     max-height: 90px;
     right: 0px;
     bottom: -15px;
-    /* Disable following face on mobile */
     -moz-transform: none;
     -webkit-transform: none;
     -o-transform: none;
@@ -593,6 +584,5 @@ html:focus-within {
   #nj-logo {
     max-height: 38px;
   }
-
   /* ^ Mobile Styles ^ */
 }
