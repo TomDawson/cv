@@ -330,22 +330,6 @@ em {
   float: right;
 }
 
-#actuator-logo {
-  max-height: 29px;
-}
-
-#swyftx-logo {
-  max-height: 35px;
-}
-
-#td-logo {
-  max-height: 36px;
-}
-
-#nj-logo {
-  max-height: 48px;
-}
-
 /* Before/After content */
 .p-title::after, .p-subtitle::after, .section-entry::after, .entry-points li::marker {
   color: var(--faded);
@@ -404,9 +388,9 @@ footer p {
 
 #footer-global {
   font-family: "Yoster Island", sans-serif;
-  font-size: 0.8em;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.1px;
   border-top: dashed 2px var(--primary);
+  line-height: 1;
 }
 
 .obviously {
