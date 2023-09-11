@@ -36,10 +36,8 @@
 } */
 
 :root {
-  --body-font: "JetBrains Mono";
-  --heading-font: "Pixel NES";
-  /* --heading-font: "Yoster Island"; */
-  
+  --body-font: "JetBrains Mono", monospace;
+  --heading-font: "Pixel NES", sans-serif;
 }
 
 html[data-theme="light"] {
@@ -49,7 +47,7 @@ html[data-theme="light"] {
   --faded: #BDBAB2;
   --primary: #3A679C;
   --secondary: #9D6639;
-  --tertiary: ;
+  --tertiary: #9D3A7C;
   --font-weight: 800;
 }
 
@@ -60,13 +58,12 @@ html[data-theme="dark"] {
   --faded: #4F4F6B;
   --primary: #AA9FFF;
   --secondary: #F5D324;
-  --tertiary: #3F8EFC;
-  /* --tertiary: #62C370; */
+  --tertiary: #FA606F;
   --font-weight: 500;
 }
 
 body {
-  font-family: var(--body-font), monospace;
+  font-family: var(--body-font);
   font-size: 1em;
   letter-spacing: -0.8px;
   color: var(--body);
@@ -105,6 +102,11 @@ p, body {
   color: var(--background);
 }
 
+.back-end-skill {
+  background-color: var(--tertiary);
+  color: var(--background);
+}
+
 .it-skill {
   background-color: var(--secondary);
   color: var(--background);
@@ -117,7 +119,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font), sans-serif;
+  font-family: var(--heading-font);
   font-weight: 100;
   margin: 0;
   line-height: 1;
@@ -404,7 +406,7 @@ footer p {
 }
 
 #footer-global {
-  font-family: var(--heading-font), sans-serif;
+  font-family: var(--heading-font);
   letter-spacing: 0.1px;
   border-top: dashed 2px var(--primary);
   line-height: 1;
@@ -452,7 +454,7 @@ button,
 [type="reset"],
 [type="submit"] {
   overflow: visible;
-  font-family: var(--heading-font), sans-serif;
+  font-family: var(--heading-font);
   font-size: 1em;
   line-height: 1.15;
   margin: 0;
@@ -485,6 +487,7 @@ img,
 a,
 .container,
 .front-end-skill,
+.back-end-skill,
 .it-skill,
 .button,
 #tom-dawson,
